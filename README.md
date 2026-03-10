@@ -1,44 +1,90 @@
-# Nexus AI Investment Research System
-Nexus is an institutional-grade AI investment research platform that automates the collection, validation, analysis, and delivery of equity research across the full S&P 500 universe. Built on a custom 4-agent architecture, the system ingests financial data from multiple sources, normalises it to standard calendar quarters using day-weighted proration, applies a rigorous 35-check data quality audit, and delivers actionable investment analysis through a Telegram-based research assistant — all at approximately 0.4% the cost of a Bloomberg Terminal.
-## Key Metrics
-| Metric | Value |
-|---|---|
-| Companies tracked | 504 (full S&P 500 via iShares IVV ETF) |
-| Calendarized financial records | 176,045 |
-| Raw financial data points | 174,977 |
-| Calendarized estimate records | 40,208 |
-| Automated quality checks | 35 (3-layer audit framework) |
-| Monthly operating cost | ~$60 |
-## Architecture
-AGENT 1 (Data Collector) AGENT 2 (Analyst)
+# Nexus
 
-5 sub-collectors/ticker - Nexus Score (0-100)
-FMP API + web search - DCF fair value models
-Full citation tracking - Multi-factor trade setup
-| ^
-v |
-[ PostgreSQL ]------>---------+-------+
-^ |
-| |
-AGENT 3 (Scheduler) AGENT 4 (Research Intelligence)
-Weekly full refresh - 35-check data quality audit
-Daily incremental update - LLM-assisted anomaly review
-Telegram broadcasting - Institutional tone enforcement
-## Technology Stack
-| Component | Technology |
-|---|---|
-| Frontend | React 18, TypeScript, Tailwind CSS, shadcn/ui |
-| Backend | Node.js, Express, TypeScript |
-| Database | PostgreSQL with Drizzle ORM |
-| AI / LLM | OpenAI GPT-5-mini |
-| Vector Search | pgvector (HNSW, cosine similarity) |
-| Messaging | Telegram Bot API |
-| Data Sources | FMP API, iShares IVV ETF, DuckDuckGo/Bing |
-## How to Explore
-- **Full architecture document**: See [`docs/Nexus-Architecture-Data-Quality-Framework.pdf`](docs/Nexus-Architecture-Data-Quality-Framework.pdf) for the complete system specification including all 35 audit checks, calendarization methodology, agent responsibilities, and interview preparation materials.
-- **Interview pack**: See [`docs/Nexus-Interview-Pack.pdf`](docs/Nexus-Interview-Pack.pdf) for sample answers, cheat sheet, and practice script.
-- **Demo screenshots**: See the [`screenshots/`](screenshots/) folder for live Telegram interactions showing analysis output, data quality reports, and system status.
-## Status
-MVP phase — all core functionality live and running daily on Replit. Production migration (LangGraph orchestration + enterprise data platform) planned as next phase.
+**A multi-agent AI system that automates institutional-grade equity research across the full S&P 500.**
+
 ---
-*Built March 2026*
+
+## What It Does
+
+Nexus is a production investment research system built on LangGraph that continuously monitors, values, and audits 507 S&P 500 stocks. Four specialized AI agents collaborate through orchestrated pipelines to collect financial data, generate DCF valuations, enforce data quality, and deliver actionable research — all accessible through a natural-language Telegram assistant.
+
+---
+
+## Key Highlights
+
+| | |
+|---|---|
+| **Coverage** | Full S&P 500 (507 tickers from IVV ETF) |
+| **Automation** | 10 daily scheduled jobs running autonomously |
+| **Valuation** | 3-scenario DCF with Nexus Score (0–100) |
+| **Quality** | 35-check automated audit per ticker |
+| **Self-Improving** | Feedback loop refines analysis after every cycle |
+| **Delivery** | Telegram bot with 27 natural-language commands |
+| **Uptime** | Reserved VM deployment (always-on production) |
+
+---
+
+## Architecture
+
+```mermaid
+flowchart TB
+    subgraph Pipeline1["LangGraph Ticker Pipeline"]
+        direction LR
+        A1["Agent 1\nData Collector"]
+        A2["Agent 2\nAnalyst"]
+        A4["Agent 4\nAuditor"]
+        A1 -->|raw data| A2
+        A2 -->|valuations| A4
+    end
+
+    subgraph Pipeline2["LangGraph Feedback Pipeline"]
+        direction LR
+        F1["Data Fix\n(Agent 1)"]
+        F2["Polish\n(Agent 2)"]
+        F4["Self-Review\n(Agent 4)"]
+        F1 --> F2 --> F4
+    end
+
+    A3["Agent 3\nScheduler"]
+
+    A3 -->|triggers daily| Pipeline1
+    A4 -->|issues found| Pipeline2
+    F4 -->|directives| A2
+
+    FMP["FMP API"] -->|market data| A1
+    TG["Telegram Bot"] <-->|commands & reports| A3
+```
+
+**Agent 1 — Data Collector** gathers financials, estimates, and market data from FMP API.
+**Agent 2 — Analyst** builds 3-scenario DCF valuations and computes the Nexus Score (0–100).
+**Agent 3 — Scheduler** orchestrates 10 daily/weekly jobs with catch-up logic and ETA reporting.
+**Agent 4 — Auditor** runs a 35-check quality audit and triggers the self-improving feedback loop.
+
+---
+
+## Technology Stack
+
+| Layer | Technology |
+|---|---|
+| Orchestration | LangGraph StateGraph, conditional edges, MemorySaver |
+| Language | Python 3.11 |
+| LLM | OpenAI gpt-4o-mini |
+| Data | FMP API (Stable + v3) |
+| Database | PostgreSQL with SQLAlchemy ORM |
+| Scheduler | APScheduler (AsyncIOScheduler) |
+| Delivery | Telegram Bot API |
+| Deployment | Replit Reserved VM (always-on) |
+
+---
+
+## Live Demo
+
+**Bot:** [agentic-framework.replit.app](https://agentic-framework.replit.app)
+
+---
+
+## Status
+
+Production system running daily. Built with prompt engineering and LangGraph orchestration.
+
+*Private full repo available upon request.*
