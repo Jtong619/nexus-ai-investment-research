@@ -143,10 +143,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI','H
 .flow-tag{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#818cf8;margin-bottom:16px}
 .flow-title{font-size:clamp(28px,4vw,48px);font-weight:700;line-height:1.1;letter-spacing:-1px;color:#f1f5f9;margin-bottom:16px}
 .flow-title .purple-accent{background:linear-gradient(135deg,#a78bfa,#6366f1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.flow-sub{font-size:clamp(15px,1.6vw,18px);color:#94a3b8;line-height:1.6;max-width:660px;margin:0 auto 12px}
-.flow-hint{font-size:13px;color:#818cf8;margin-bottom:36px;cursor:pointer;letter-spacing:.5px}
-.flow-hint span{display:inline-block;animation:hintPulse 2s ease-in-out infinite}
-@keyframes hintPulse{0%,100%{opacity:.6}50%{opacity:1}}
+.flow-sub{font-size:clamp(15px,1.6vw,18px);color:#94a3b8;line-height:1.6;max-width:660px;margin:0 auto 16px}
+.flow-cta{font-size:clamp(18px,2.5vw,26px);font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:40px;cursor:pointer;background:linear-gradient(90deg,#818cf8,#a78bfa,#c084fc,#818cf8);background-size:300% 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:arcadeShift 3s linear infinite,arcadePulse 1.5s ease-in-out infinite}
+@keyframes arcadeShift{0%{background-position:0% 50%}100%{background-position:300% 50%}}
+@keyframes arcadePulse{0%,100%{transform:scale(1);opacity:.85}50%{transform:scale(1.04);opacity:1}}
 .flow-chart{position:relative;width:100%;max-width:720px;margin:0 auto;cursor:pointer;-webkit-tap-highlight-color:transparent}
 .flow-chart svg{width:100%;height:auto}
 .flow-node{opacity:0;transform:translateY(15px);transition:opacity .6s ease,transform .6s ease}
