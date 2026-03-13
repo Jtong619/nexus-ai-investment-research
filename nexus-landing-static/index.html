@@ -179,29 +179,106 @@
 <filter id="trailCyan" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur in="SourceGraphic" stdDeviation="12"/></filter>
 <filter id="trailMagenta" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur in="SourceGraphic" stdDeviation="12"/></filter>
 <filter id="trailYellow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur in="SourceGraphic" stdDeviation="12"/></filter>
-<filter id="circGlowC" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur in="SourceGraphic" stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-<filter id="circGlowM" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur in="SourceGraphic" stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-<filter id="circGlowY" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur in="SourceGraphic" stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
 <filter id="nodeGlowU"><feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#6366f1" flood-opacity=".8"/></filter>
 <filter id="nodeGlowA"><feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#22c55e" flood-opacity=".8"/></filter>
 <filter id="nodeGlowD"><feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#818cf8" flood-opacity=".8"/></filter>
 <filter id="nodeGlowS"><feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#f59e0b" flood-opacity=".8"/></filter>
 </defs>
 
-<!-- ═══ THREE INTERLOCKING VENN CIRCLES — thick neon glow ═══ -->
+<!-- ═══ CIRCLE PATHS (invisible, used for particle motion) ═══ -->
+<path id="cTop" d="M178,215 A172,172 0 1,1 522,215 A172,172 0 1,1 178,215" fill="none" stroke="none"/>
+<path id="cBR" d="M293,415 A172,172 0 1,1 637,415 A172,172 0 1,1 293,415" fill="none" stroke="none"/>
+<path id="cBL" d="M63,415 A172,172 0 1,1 407,415 A172,172 0 1,1 63,415" fill="none" stroke="none"/>
+
+<!-- ═══ PARTICLE-DRAWN CIRCLES — always visible ═══ -->
 <g class="flow-node" style="transition-delay:.1s">
-<!-- Cyan circle (top / User loop) — outer glow -->
-<circle cx="350" cy="215" r="172" fill="none" stroke="#00e5ff" stroke-opacity=".06" stroke-width="22"/>
-<circle cx="350" cy="215" r="172" fill="none" stroke="#00e5ff" stroke-opacity=".12" stroke-width="6" filter="url(#circGlowC)"/>
-<circle cx="350" cy="215" r="172" fill="none" stroke="#00e5ff" stroke-opacity=".35" stroke-width="2"/>
-<!-- Magenta circle (bottom-right / Data loop) — outer glow -->
-<circle cx="465" cy="415" r="172" fill="none" stroke="#e040fb" stroke-opacity=".06" stroke-width="22"/>
-<circle cx="465" cy="415" r="172" fill="none" stroke="#e040fb" stroke-opacity=".12" stroke-width="6" filter="url(#circGlowM)"/>
-<circle cx="465" cy="415" r="172" fill="none" stroke="#e040fb" stroke-opacity=".35" stroke-width="2"/>
-<!-- Yellow circle (bottom-left / Quality loop) — outer glow -->
-<circle cx="235" cy="415" r="172" fill="none" stroke="#ffeb3b" stroke-opacity=".06" stroke-width="22"/>
-<circle cx="235" cy="415" r="172" fill="none" stroke="#ffeb3b" stroke-opacity=".12" stroke-width="6" filter="url(#circGlowY)"/>
-<circle cx="235" cy="415" r="172" fill="none" stroke="#ffeb3b" stroke-opacity=".35" stroke-width="2"/>
+<!-- ── CYAN circle (top / User loop) — 14 particles ── -->
+<circle r="10" fill="#00e5ff" opacity=".12" filter="url(#trailCyan)"><animateMotion dur="7s" repeatCount="indefinite" begin="0s"><mpath href="#cTop"/></animateMotion></circle>
+<circle r="4" fill="#00e5ff" filter="url(#glowCyan)"><animateMotion dur="7s" repeatCount="indefinite" begin="0s"><mpath href="#cTop"/></animateMotion></circle>
+<circle r="10" fill="#00e5ff" opacity=".12" filter="url(#trailCyan)"><animateMotion dur="7s" repeatCount="indefinite" begin="0.5s"><mpath href="#cTop"/></animateMotion></circle>
+<circle r="4" fill="#00e5ff" filter="url(#glowCyan)"><animateMotion dur="7s" repeatCount="indefinite" begin="0.5s"><mpath href="#cTop"/></animateMotion></circle>
+<circle r="10" fill="#00e5ff" opacity=".12" filter="url(#trailCyan)"><animateMotion dur="7s" repeatCount="indefinite" begin="1s"><mpath href="#cTop"/></animateMotion></circle>
+<circle r="4" fill="#00e5ff" filter="url(#glowCyan)"><animateMotion dur="7s" repeatCount="indefinite" begin="1s"><mpath href="#cTop"/></animateMotion></circle>
+<circle r="10" fill="#00e5ff" opacity=".12" filter="url(#trailCyan)"><animateMotion dur="7s" repeatCount="indefinite" begin="1.5s"><mpath href="#cTop"/></animateMotion></circle>
+<circle r="4" fill="#00e5ff" filter="url(#glowCyan)"><animateMotion dur="7s" repeatCount="indefinite" begin="1.5s"><mpath href="#cTop"/></animateMotion></circle>
+<circle r="10" fill="#00e5ff" opacity=".12" filter="url(#trailCyan)"><animateMotion dur="7s" repeatCount="indefinite" begin="2s"><mpath href="#cTop"/></animateMotion></circle>
+<circle r="4" fill="#00e5ff" filter="url(#glowCyan)"><animateMotion dur="7s" repeatCount="indefinite" begin="2s"><mpath href="#cTop"/></animateMotion></circle>
+<circle r="10" fill="#00e5ff" opacity=".12" filter="url(#trailCyan)"><animateMotion dur="7s" repeatCount="indefinite" begin="2.5s"><mpath href="#cTop"/></animateMotion></circle>
+<circle r="4" fill="#00e5ff" filter="url(#glowCyan)"><animateMotion dur="7s" repeatCount="indefinite" begin="2.5s"><mpath href="#cTop"/></animateMotion></circle>
+<circle r="10" fill="#00e5ff" opacity=".12" filter="url(#trailCyan)"><animateMotion dur="7s" repeatCount="indefinite" begin="3s"><mpath href="#cTop"/></animateMotion></circle>
+<circle r="4" fill="#00e5ff" filter="url(#glowCyan)"><animateMotion dur="7s" repeatCount="indefinite" begin="3s"><mpath href="#cTop"/></animateMotion></circle>
+<circle r="10" fill="#00e5ff" opacity=".12" filter="url(#trailCyan)"><animateMotion dur="7s" repeatCount="indefinite" begin="3.5s"><mpath href="#cTop"/></animateMotion></circle>
+<circle r="4" fill="#00e5ff" filter="url(#glowCyan)"><animateMotion dur="7s" repeatCount="indefinite" begin="3.5s"><mpath href="#cTop"/></animateMotion></circle>
+<circle r="10" fill="#00e5ff" opacity=".12" filter="url(#trailCyan)"><animateMotion dur="7s" repeatCount="indefinite" begin="4s"><mpath href="#cTop"/></animateMotion></circle>
+<circle r="4" fill="#00e5ff" filter="url(#glowCyan)"><animateMotion dur="7s" repeatCount="indefinite" begin="4s"><mpath href="#cTop"/></animateMotion></circle>
+<circle r="10" fill="#00e5ff" opacity=".12" filter="url(#trailCyan)"><animateMotion dur="7s" repeatCount="indefinite" begin="4.5s"><mpath href="#cTop"/></animateMotion></circle>
+<circle r="4" fill="#00e5ff" filter="url(#glowCyan)"><animateMotion dur="7s" repeatCount="indefinite" begin="4.5s"><mpath href="#cTop"/></animateMotion></circle>
+<circle r="10" fill="#00e5ff" opacity=".12" filter="url(#trailCyan)"><animateMotion dur="7s" repeatCount="indefinite" begin="5s"><mpath href="#cTop"/></animateMotion></circle>
+<circle r="4" fill="#00e5ff" filter="url(#glowCyan)"><animateMotion dur="7s" repeatCount="indefinite" begin="5s"><mpath href="#cTop"/></animateMotion></circle>
+<circle r="10" fill="#00e5ff" opacity=".12" filter="url(#trailCyan)"><animateMotion dur="7s" repeatCount="indefinite" begin="5.5s"><mpath href="#cTop"/></animateMotion></circle>
+<circle r="4" fill="#00e5ff" filter="url(#glowCyan)"><animateMotion dur="7s" repeatCount="indefinite" begin="5.5s"><mpath href="#cTop"/></animateMotion></circle>
+<circle r="10" fill="#00e5ff" opacity=".12" filter="url(#trailCyan)"><animateMotion dur="7s" repeatCount="indefinite" begin="6s"><mpath href="#cTop"/></animateMotion></circle>
+<circle r="4" fill="#00e5ff" filter="url(#glowCyan)"><animateMotion dur="7s" repeatCount="indefinite" begin="6s"><mpath href="#cTop"/></animateMotion></circle>
+<circle r="10" fill="#00e5ff" opacity=".12" filter="url(#trailCyan)"><animateMotion dur="7s" repeatCount="indefinite" begin="6.5s"><mpath href="#cTop"/></animateMotion></circle>
+<circle r="4" fill="#00e5ff" filter="url(#glowCyan)"><animateMotion dur="7s" repeatCount="indefinite" begin="6.5s"><mpath href="#cTop"/></animateMotion></circle>
+<!-- ── MAGENTA circle (bottom-right / Data loop) — 14 particles ── -->
+<circle r="10" fill="#e040fb" opacity=".12" filter="url(#trailMagenta)"><animateMotion dur="7s" repeatCount="indefinite" begin="0s"><mpath href="#cBR"/></animateMotion></circle>
+<circle r="4" fill="#e040fb" filter="url(#glowMagenta)"><animateMotion dur="7s" repeatCount="indefinite" begin="0s"><mpath href="#cBR"/></animateMotion></circle>
+<circle r="10" fill="#e040fb" opacity=".12" filter="url(#trailMagenta)"><animateMotion dur="7s" repeatCount="indefinite" begin="0.5s"><mpath href="#cBR"/></animateMotion></circle>
+<circle r="4" fill="#e040fb" filter="url(#glowMagenta)"><animateMotion dur="7s" repeatCount="indefinite" begin="0.5s"><mpath href="#cBR"/></animateMotion></circle>
+<circle r="10" fill="#e040fb" opacity=".12" filter="url(#trailMagenta)"><animateMotion dur="7s" repeatCount="indefinite" begin="1s"><mpath href="#cBR"/></animateMotion></circle>
+<circle r="4" fill="#e040fb" filter="url(#glowMagenta)"><animateMotion dur="7s" repeatCount="indefinite" begin="1s"><mpath href="#cBR"/></animateMotion></circle>
+<circle r="10" fill="#e040fb" opacity=".12" filter="url(#trailMagenta)"><animateMotion dur="7s" repeatCount="indefinite" begin="1.5s"><mpath href="#cBR"/></animateMotion></circle>
+<circle r="4" fill="#e040fb" filter="url(#glowMagenta)"><animateMotion dur="7s" repeatCount="indefinite" begin="1.5s"><mpath href="#cBR"/></animateMotion></circle>
+<circle r="10" fill="#e040fb" opacity=".12" filter="url(#trailMagenta)"><animateMotion dur="7s" repeatCount="indefinite" begin="2s"><mpath href="#cBR"/></animateMotion></circle>
+<circle r="4" fill="#e040fb" filter="url(#glowMagenta)"><animateMotion dur="7s" repeatCount="indefinite" begin="2s"><mpath href="#cBR"/></animateMotion></circle>
+<circle r="10" fill="#e040fb" opacity=".12" filter="url(#trailMagenta)"><animateMotion dur="7s" repeatCount="indefinite" begin="2.5s"><mpath href="#cBR"/></animateMotion></circle>
+<circle r="4" fill="#e040fb" filter="url(#glowMagenta)"><animateMotion dur="7s" repeatCount="indefinite" begin="2.5s"><mpath href="#cBR"/></animateMotion></circle>
+<circle r="10" fill="#e040fb" opacity=".12" filter="url(#trailMagenta)"><animateMotion dur="7s" repeatCount="indefinite" begin="3s"><mpath href="#cBR"/></animateMotion></circle>
+<circle r="4" fill="#e040fb" filter="url(#glowMagenta)"><animateMotion dur="7s" repeatCount="indefinite" begin="3s"><mpath href="#cBR"/></animateMotion></circle>
+<circle r="10" fill="#e040fb" opacity=".12" filter="url(#trailMagenta)"><animateMotion dur="7s" repeatCount="indefinite" begin="3.5s"><mpath href="#cBR"/></animateMotion></circle>
+<circle r="4" fill="#e040fb" filter="url(#glowMagenta)"><animateMotion dur="7s" repeatCount="indefinite" begin="3.5s"><mpath href="#cBR"/></animateMotion></circle>
+<circle r="10" fill="#e040fb" opacity=".12" filter="url(#trailMagenta)"><animateMotion dur="7s" repeatCount="indefinite" begin="4s"><mpath href="#cBR"/></animateMotion></circle>
+<circle r="4" fill="#e040fb" filter="url(#glowMagenta)"><animateMotion dur="7s" repeatCount="indefinite" begin="4s"><mpath href="#cBR"/></animateMotion></circle>
+<circle r="10" fill="#e040fb" opacity=".12" filter="url(#trailMagenta)"><animateMotion dur="7s" repeatCount="indefinite" begin="4.5s"><mpath href="#cBR"/></animateMotion></circle>
+<circle r="4" fill="#e040fb" filter="url(#glowMagenta)"><animateMotion dur="7s" repeatCount="indefinite" begin="4.5s"><mpath href="#cBR"/></animateMotion></circle>
+<circle r="10" fill="#e040fb" opacity=".12" filter="url(#trailMagenta)"><animateMotion dur="7s" repeatCount="indefinite" begin="5s"><mpath href="#cBR"/></animateMotion></circle>
+<circle r="4" fill="#e040fb" filter="url(#glowMagenta)"><animateMotion dur="7s" repeatCount="indefinite" begin="5s"><mpath href="#cBR"/></animateMotion></circle>
+<circle r="10" fill="#e040fb" opacity=".12" filter="url(#trailMagenta)"><animateMotion dur="7s" repeatCount="indefinite" begin="5.5s"><mpath href="#cBR"/></animateMotion></circle>
+<circle r="4" fill="#e040fb" filter="url(#glowMagenta)"><animateMotion dur="7s" repeatCount="indefinite" begin="5.5s"><mpath href="#cBR"/></animateMotion></circle>
+<circle r="10" fill="#e040fb" opacity=".12" filter="url(#trailMagenta)"><animateMotion dur="7s" repeatCount="indefinite" begin="6s"><mpath href="#cBR"/></animateMotion></circle>
+<circle r="4" fill="#e040fb" filter="url(#glowMagenta)"><animateMotion dur="7s" repeatCount="indefinite" begin="6s"><mpath href="#cBR"/></animateMotion></circle>
+<circle r="10" fill="#e040fb" opacity=".12" filter="url(#trailMagenta)"><animateMotion dur="7s" repeatCount="indefinite" begin="6.5s"><mpath href="#cBR"/></animateMotion></circle>
+<circle r="4" fill="#e040fb" filter="url(#glowMagenta)"><animateMotion dur="7s" repeatCount="indefinite" begin="6.5s"><mpath href="#cBR"/></animateMotion></circle>
+<!-- ── YELLOW circle (bottom-left / Quality loop) — 14 particles ── -->
+<circle r="10" fill="#ffeb3b" opacity=".12" filter="url(#trailYellow)"><animateMotion dur="7s" repeatCount="indefinite" begin="0s"><mpath href="#cBL"/></animateMotion></circle>
+<circle r="4" fill="#ffeb3b" filter="url(#glowYellow)"><animateMotion dur="7s" repeatCount="indefinite" begin="0s"><mpath href="#cBL"/></animateMotion></circle>
+<circle r="10" fill="#ffeb3b" opacity=".12" filter="url(#trailYellow)"><animateMotion dur="7s" repeatCount="indefinite" begin="0.5s"><mpath href="#cBL"/></animateMotion></circle>
+<circle r="4" fill="#ffeb3b" filter="url(#glowYellow)"><animateMotion dur="7s" repeatCount="indefinite" begin="0.5s"><mpath href="#cBL"/></animateMotion></circle>
+<circle r="10" fill="#ffeb3b" opacity=".12" filter="url(#trailYellow)"><animateMotion dur="7s" repeatCount="indefinite" begin="1s"><mpath href="#cBL"/></animateMotion></circle>
+<circle r="4" fill="#ffeb3b" filter="url(#glowYellow)"><animateMotion dur="7s" repeatCount="indefinite" begin="1s"><mpath href="#cBL"/></animateMotion></circle>
+<circle r="10" fill="#ffeb3b" opacity=".12" filter="url(#trailYellow)"><animateMotion dur="7s" repeatCount="indefinite" begin="1.5s"><mpath href="#cBL"/></animateMotion></circle>
+<circle r="4" fill="#ffeb3b" filter="url(#glowYellow)"><animateMotion dur="7s" repeatCount="indefinite" begin="1.5s"><mpath href="#cBL"/></animateMotion></circle>
+<circle r="10" fill="#ffeb3b" opacity=".12" filter="url(#trailYellow)"><animateMotion dur="7s" repeatCount="indefinite" begin="2s"><mpath href="#cBL"/></animateMotion></circle>
+<circle r="4" fill="#ffeb3b" filter="url(#glowYellow)"><animateMotion dur="7s" repeatCount="indefinite" begin="2s"><mpath href="#cBL"/></animateMotion></circle>
+<circle r="10" fill="#ffeb3b" opacity=".12" filter="url(#trailYellow)"><animateMotion dur="7s" repeatCount="indefinite" begin="2.5s"><mpath href="#cBL"/></animateMotion></circle>
+<circle r="4" fill="#ffeb3b" filter="url(#glowYellow)"><animateMotion dur="7s" repeatCount="indefinite" begin="2.5s"><mpath href="#cBL"/></animateMotion></circle>
+<circle r="10" fill="#ffeb3b" opacity=".12" filter="url(#trailYellow)"><animateMotion dur="7s" repeatCount="indefinite" begin="3s"><mpath href="#cBL"/></animateMotion></circle>
+<circle r="4" fill="#ffeb3b" filter="url(#glowYellow)"><animateMotion dur="7s" repeatCount="indefinite" begin="3s"><mpath href="#cBL"/></animateMotion></circle>
+<circle r="10" fill="#ffeb3b" opacity=".12" filter="url(#trailYellow)"><animateMotion dur="7s" repeatCount="indefinite" begin="3.5s"><mpath href="#cBL"/></animateMotion></circle>
+<circle r="4" fill="#ffeb3b" filter="url(#glowYellow)"><animateMotion dur="7s" repeatCount="indefinite" begin="3.5s"><mpath href="#cBL"/></animateMotion></circle>
+<circle r="10" fill="#ffeb3b" opacity=".12" filter="url(#trailYellow)"><animateMotion dur="7s" repeatCount="indefinite" begin="4s"><mpath href="#cBL"/></animateMotion></circle>
+<circle r="4" fill="#ffeb3b" filter="url(#glowYellow)"><animateMotion dur="7s" repeatCount="indefinite" begin="4s"><mpath href="#cBL"/></animateMotion></circle>
+<circle r="10" fill="#ffeb3b" opacity=".12" filter="url(#trailYellow)"><animateMotion dur="7s" repeatCount="indefinite" begin="4.5s"><mpath href="#cBL"/></animateMotion></circle>
+<circle r="4" fill="#ffeb3b" filter="url(#glowYellow)"><animateMotion dur="7s" repeatCount="indefinite" begin="4.5s"><mpath href="#cBL"/></animateMotion></circle>
+<circle r="10" fill="#ffeb3b" opacity=".12" filter="url(#trailYellow)"><animateMotion dur="7s" repeatCount="indefinite" begin="5s"><mpath href="#cBL"/></animateMotion></circle>
+<circle r="4" fill="#ffeb3b" filter="url(#glowYellow)"><animateMotion dur="7s" repeatCount="indefinite" begin="5s"><mpath href="#cBL"/></animateMotion></circle>
+<circle r="10" fill="#ffeb3b" opacity=".12" filter="url(#trailYellow)"><animateMotion dur="7s" repeatCount="indefinite" begin="5.5s"><mpath href="#cBL"/></animateMotion></circle>
+<circle r="4" fill="#ffeb3b" filter="url(#glowYellow)"><animateMotion dur="7s" repeatCount="indefinite" begin="5.5s"><mpath href="#cBL"/></animateMotion></circle>
+<circle r="10" fill="#ffeb3b" opacity=".12" filter="url(#trailYellow)"><animateMotion dur="7s" repeatCount="indefinite" begin="6s"><mpath href="#cBL"/></animateMotion></circle>
+<circle r="4" fill="#ffeb3b" filter="url(#glowYellow)"><animateMotion dur="7s" repeatCount="indefinite" begin="6s"><mpath href="#cBL"/></animateMotion></circle>
+<circle r="10" fill="#ffeb3b" opacity=".12" filter="url(#trailYellow)"><animateMotion dur="7s" repeatCount="indefinite" begin="6.5s"><mpath href="#cBL"/></animateMotion></circle>
+<circle r="4" fill="#ffeb3b" filter="url(#glowYellow)"><animateMotion dur="7s" repeatCount="indefinite" begin="6.5s"><mpath href="#cBL"/></animateMotion></circle>
 <!-- Loop labels -->
 <text x="350" y="72" text-anchor="middle" fill="rgba(0,229,255,.3)" font-size="10" font-weight="700" letter-spacing="3" font-family="system-ui">USER LOOP</text>
 <text x="120" y="540" text-anchor="middle" fill="rgba(255,235,59,.3)" font-size="10" font-weight="700" letter-spacing="3" font-family="system-ui">QUALITY LOOP</text>
