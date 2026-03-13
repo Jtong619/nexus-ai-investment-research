@@ -85,6 +85,10 @@
 <div class="browser-url"><span class="url-lock">&#128274;</span> nexus.research.app/dashboard</div>
 <div class="browser-spacer"></div>
 </div>
+<div class="browser-tabs">
+<div class="chrome-tab active"><div class="tab-favicon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2L21 7v10l-9 5-9-5V7l9-5z" stroke="#6366f1" stroke-width="1.5"/></svg></div>NVDA - Nexus Research<span class="tab-close">&times;</span></div>
+<div class="chrome-tab"><div class="tab-favicon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2L21 7v10l-9 5-9-5V7l9-5z" stroke="#475569" stroke-width="1.5"/></svg></div>Portfolio<span class="tab-close">&times;</span></div>
+</div>
 <div class="browser-nav">
 <div class="nav-logo"><div class="nav-icon"><svg viewBox="0 0 48 48" fill="none"><path d="M24 4L42 14v20L24 44 6 34V14L24 4z" stroke="#6366f1" stroke-width="1.5" fill="none" opacity=".7"/><circle cx="24" cy="24" r="5" fill="#6366f1" opacity=".7"/></svg></div><span class="nav-brand">Nexus</span></div>
 <div class="nav-search"><span class="search-icon">&#128269;</span><span class="search-text">Search ticker or ask a question...</span></div>
@@ -129,13 +133,8 @@
 <div class="dash-right">
 <div class="chat-panel">
 <div class="chat-header"><span class="chat-icon">&#9679;</span> Nexus AI Research Assistant</div>
-<div class="chat-body">
-<div class="chat-msg chat-user"><div class="chat-avatar chat-av-u">You</div><div class="chat-bubble chat-bub-u">What&rsquo;s your take on NVDA right now? Is the valuation justified given the AI spending cycle?</div></div>
-<div class="chat-msg chat-ai"><div class="chat-avatar chat-av-a"><svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M12 2L21 7v10l-9 5-9-5V7l9-5z" stroke="#6366f1" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="#6366f1" opacity=".7"/></svg></div><div class="chat-bubble chat-bub-a"><div class="chat-ai-label">Nexus AI</div>Based on our multi-factor analysis, NVDA scores <strong>87/100</strong> with a <strong>BUY</strong> conviction at <strong>HIGH</strong> confidence.<br><br><strong>Bull Case:</strong> Datacenter revenue surged 409% YoY. AI training demand is structural. Gross margins at 78.4%.<br><br><strong>Bear Case:</strong> Fwd P/E of 38x prices in significant growth. Export controls limit ~$5B TAM.<br><br><strong>DCF Model:</strong> 5-year DCF yields fair value of <strong>$152.80</strong> &mdash; 18.4% upside.<br><br>Risk/reward remains favorable for 6-12 month horizon.</div></div>
-<div class="chat-msg chat-user"><div class="chat-avatar chat-av-u">You</div><div class="chat-bubble chat-bub-u">How does NVDA compare to AMD?</div></div>
-<div class="chat-msg chat-ai"><div class="chat-avatar chat-av-a"><svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M12 2L21 7v10l-9 5-9-5V7l9-5z" stroke="#6366f1" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="#6366f1" opacity=".7"/></svg></div><div class="chat-bubble chat-bub-a"><div class="chat-ai-label">Nexus AI</div>AMD scores <strong>71/100</strong> vs NVDA&rsquo;s 87:<br>&bull; <strong>Factor Positioning:</strong> NVDA 85 vs AMD 62<br>&bull; <strong>Financial Momentum:</strong> NVDA 92 vs AMD 74<br>&bull; <strong>Valuation:</strong> NVDA 68 vs AMD 72<br><br>NVDA&rsquo;s dominance in training GPUs gives it a structural edge.</div></div>
-</div>
-<div class="chat-input"><span class="chat-input-icon">&#9997;</span><span class="chat-input-text">Ask about any S&amp;P 500 ticker...</span></div>
+<div class="chat-anim-container" id="chatAnim"></div>
+<div class="chat-input-anim"><span style="font-size:14px;color:#64748b">&#9997;</span><span id="chatInputText" style="font-size:12px;color:#475569"></span><span class="type-cursor" id="chatCursor" style="display:none"></span></div>
 </div>
 </div>
 </div>
