@@ -162,7 +162,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI','H
 .score-label{font-size:9px;color:#94a3b8;text-align:center;line-height:1.2}
 @media(max-width:768px){.browser-content{grid-template-columns:1fr}.dash-left{border-right:none;border-bottom:1px solid rgba(99,102,241,.08)}.browser-nav .nav-links{display:none}.nav-search{max-width:200px}}
 
-.chat-anim-container{position:relative;overflow-y:auto;overflow-x:hidden;flex:1;padding:12px 14px;display:flex;flex-direction:column;gap:10px;scrollbar-width:thin;scrollbar-color:rgba(99,102,241,.2) transparent}
+.chat-anim-container{position:relative;overflow-y:auto;overflow-x:hidden;height:480px;max-height:480px;padding:12px 14px;display:flex;flex-direction:column;gap:10px;scrollbar-width:thin;scrollbar-color:rgba(99,102,241,.2) transparent;scroll-behavior:smooth}
 .chat-scroll{display:flex;flex-direction:column;gap:10px;padding:12px 14px;height:100%;overflow:hidden}
 .chat-line{opacity:0;transform:translateY(12px);animation-fill-mode:forwards}
 .chat-typing{display:inline-flex;gap:3px;padding:6px 12px;background:rgba(30,41,59,.5);border:1px solid rgba(99,102,241,.08);border-radius:10px}
@@ -175,6 +175,26 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI','H
 .chat-input-anim{display:flex;align-items:center;gap:8px;padding:10px 14px;border-top:1px solid rgba(99,102,241,.08);background:rgba(15,23,42,.3)}
 .type-cursor{display:inline-block;width:1px;height:13px;background:#a5b4fc;animation:blink 1s step-end infinite;vertical-align:middle;margin-left:1px}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.dcf-dl-btn{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;margin-top:8px;border-radius:6px;background:rgba(99,102,241,.15);border:1px solid rgba(99,102,241,.3);color:#a5b4fc;font-size:10px;font-weight:700;cursor:pointer;transition:all .3s ease;letter-spacing:.5px}
+.dcf-dl-btn:hover{background:rgba(99,102,241,.25)}
+.dcf-dl-btn .dl-icon{font-size:12px}
+.dcf-dl-btn.downloading{background:rgba(34,197,94,.15);border-color:rgba(34,197,94,.3);color:#4ade80}
+.dcf-dl-btn .dl-progress{display:none;width:60px;height:4px;background:rgba(99,102,241,.1);border-radius:2px;overflow:hidden;margin-left:4px}
+.dcf-dl-btn.downloading .dl-progress{display:block}
+.dl-progress-bar{height:100%;width:0;background:linear-gradient(90deg,#6366f1,#22c55e);border-radius:2px;animation:dlFill 2s ease forwards}
+@keyframes dlFill{0%{width:0}100%{width:100%}}
+.dcf-dl-btn .dl-check{display:none;color:#4ade80}
+.dcf-dl-btn.done .dl-check{display:inline}
+.dcf-dl-btn.done .dl-icon{display:none}
+.dcf-dl-btn.done .dl-progress{display:none}
+.dcf-dl-btn.done{background:rgba(34,197,94,.1);border-color:rgba(34,197,94,.2);color:#4ade80}
+.factor-pill{display:inline-block;font-size:9px;padding:2px 7px;border-radius:8px;font-weight:600;margin:1px 2px}
+.factor-pill.fp-pos{background:rgba(34,197,94,.1);color:#4ade80;border:1px solid rgba(34,197,94,.15)}
+.factor-pill.fp-neg{background:rgba(239,68,68,.1);color:#f87171;border:1px solid rgba(239,68,68,.15)}
+.factor-pill.fp-neu{background:rgba(251,191,36,.1);color:#fbbf24;border:1px solid rgba(251,191,36,.15)}
+.ns-badge{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:800;background:rgba(99,102,241,.15);border:1px solid rgba(99,102,241,.3);color:#c7d2fe;margin:4px 0}
+.ns-badge .ns-bar{width:40px;height:5px;background:rgba(99,102,241,.15);border-radius:3px;overflow:hidden}
+.ns-bar-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,#ef4444,#f59e0b,#22c55e)}
 
 /* ===== PAGE 4: AGENTIC FLOW ===== */
 .flow-section{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:80px 24px;background:linear-gradient(180deg,#0a0e1a 0%,#0f172a 50%,#0a0e1a 100%);overflow:hidden}
