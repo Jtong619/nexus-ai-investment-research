@@ -13,16 +13,13 @@ document.querySelectorAll('.col-text,.col-visual,.s-text,.s-visual').forEach(fun
 var fObs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){var nodes=e.target.querySelectorAll('.flow-node');nodes.forEach(function(n,i){setTimeout(function(){n.classList.add('visible')},i*200)});fObs.unobserve(e.target)}})},{threshold:.15});
 document.querySelectorAll('.flow-chart').forEach(function(el){fObs.observe(el)});
 
-var flowRevealed=false;
+var flowStep=0;var flowMax=6;
 var fc=document.getElementById('flowChart');
 var sc=document.getElementById('stepCounter');
 if(fc){fc.addEventListener('click',function(){
-if(flowRevealed)return;flowRevealed=true;
-['outerRing1','outerRing2','outerRing3'].forEach(function(id,i){
-var el=document.getElementById(id);if(el)setTimeout(function(){el.classList.add('revealed')},i*300)});
-var od=document.getElementById('outerDots');if(od)setTimeout(function(){od.classList.add('revealed')},400);
-for(var i=1;i<=6;i++){(function(si){var s=document.getElementById('step'+si);if(s)setTimeout(function(){s.classList.add('revealed')},si*250)})(i)}
-if(sc)sc.textContent='Architecture revealed \u2713';
+flowStep++;if(flowStep>flowMax)return;
+var a=document.getElementById('arc'+flowStep);if(a)a.classList.add('revealed');
+if(sc){if(flowStep<flowMax)sc.textContent='Step '+flowStep+' / '+flowMax+' \u2014 tap for next';else sc.textContent='Architecture revealed \u2713'}
 })}
 
 var painObs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){var items=e.target.querySelectorAll('.pain-item');items.forEach(function(item,i){setTimeout(function(){item.classList.add('visible')},i*200)});painObs.unobserve(e.target)}})},{threshold:.3});
