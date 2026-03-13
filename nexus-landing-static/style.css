@@ -153,8 +153,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI','H
 .flow-node.visible{opacity:1;transform:translateY(0)}
 @keyframes pulseGlow{0%,100%{opacity:.45}50%{opacity:1}}
 .flow-glow{animation:pulseGlow 2s ease-in-out infinite}
-.fl-step{opacity:0;transition:opacity .8s ease}
-.fl-step.revealed{opacity:1}
 .outer-ring{opacity:0;transition:opacity 1.2s ease}
 .outer-ring.revealed{opacity:1}
 .outer-ring .pipe-track{stroke-dasharray:1082;stroke-dashoffset:1082;transition:stroke-dashoffset 2s ease-in-out}
