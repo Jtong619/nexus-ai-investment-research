@@ -16,11 +16,12 @@ document.querySelectorAll('.flow-chart').forEach(function(el){fObs.observe(el)})
 var flowStep=0;var flowMax=6;
 var fc=document.getElementById('flowChart');
 var sc=document.getElementById('stepCounter');
-if(fc){fc.addEventListener('click',function(){
-flowStep++;if(flowStep>flowMax)return;
+var flowCta=document.getElementById('flowCta');
+function advanceFlow(){flowStep++;if(flowStep>flowMax)return;
 var a=document.getElementById('arc'+flowStep);if(a)a.classList.add('revealed');
-if(sc){if(flowStep<flowMax)sc.textContent='Step '+flowStep+' / '+flowMax+' \u2014 tap for next';else{sc.textContent='Architecture revealed \u2713';var cta=document.getElementById('flowCta');if(cta){cta.style.transition='opacity .8s ease';cta.style.opacity='0'}}}
-})}
+if(sc){if(flowStep<flowMax){sc.textContent='Step '+flowStep+' / '+flowMax+' \u2014 tap for next'}else{sc.textContent='Architecture revealed \u2713';if(flowCta)flowCta.style.display='none'}}}
+if(fc)fc.addEventListener('click',advanceFlow);
+if(flowCta)flowCta.addEventListener('click',advanceFlow)
 
 var painObs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){var items=e.target.querySelectorAll('.pain-item');items.forEach(function(item,i){setTimeout(function(){item.classList.add('visible')},i*200)});painObs.unobserve(e.target)}})},{threshold:.3});
 document.querySelectorAll('.pain-list').forEach(function(el){painObs.observe(el)});
