@@ -185,16 +185,25 @@
 <filter id="nodeGlowS"><feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#f59e0b" flood-opacity=".8"/></filter>
 </defs>
 
-<!-- ═══ CIRCLE PATHS (invisible, used for particle motion) ═══ -->
-<path id="cTop" d="M178,215 A172,172 0 1,1 522,215 A172,172 0 1,1 178,215" fill="none" stroke="rgba(0,229,255,.08)" stroke-width="1.2"/>
-<path d="M178,215 A172,172 0 1,1 522,215 A172,172 0 1,1 178,215" fill="none" stroke="rgba(30,70,80,.45)" stroke-width="7" stroke-linecap="round"/>
-<path id="cBR" d="M293,415 A172,172 0 1,1 637,415 A172,172 0 1,1 293,415" fill="none" stroke="rgba(224,64,251,.08)" stroke-width="1.2"/>
-<path d="M293,415 A172,172 0 1,1 637,415 A172,172 0 1,1 293,415" fill="none" stroke="rgba(50,30,70,.45)" stroke-width="7" stroke-linecap="round"/>
-<path id="cBL" d="M63,415 A172,172 0 1,1 407,415 A172,172 0 1,1 63,415" fill="none" stroke="rgba(255,235,59,.08)" stroke-width="1.2"/>
-<path d="M63,415 A172,172 0 1,1 407,415 A172,172 0 1,1 63,415" fill="none" stroke="rgba(60,55,20,.45)" stroke-width="7" stroke-linecap="round"/>
+<!-- ═══ CIRCLE PATHS — hidden initially, revealed on tap ═══ -->
+<path id="cTop" d="M178,215 A172,172 0 1,1 522,215 A172,172 0 1,1 178,215" fill="none" stroke="none"/>
+<path id="cBR" d="M293,415 A172,172 0 1,1 637,415 A172,172 0 1,1 293,415" fill="none" stroke="none"/>
+<path id="cBL" d="M63,415 A172,172 0 1,1 407,415 A172,172 0 1,1 63,415" fill="none" stroke="none"/>
+<g class="outer-ring" id="outerRing1">
+<path class="pipe-track" d="M178,215 A172,172 0 1,1 522,215 A172,172 0 1,1 178,215" fill="none" stroke="rgba(30,70,80,.45)" stroke-width="7" stroke-linecap="round"/>
+<path d="M178,215 A172,172 0 1,1 522,215 A172,172 0 1,1 178,215" fill="none" stroke="rgba(0,229,255,.08)" stroke-width="1.2"/>
+</g>
+<g class="outer-ring" id="outerRing2">
+<path class="pipe-track" d="M293,415 A172,172 0 1,1 637,415 A172,172 0 1,1 293,415" fill="none" stroke="rgba(50,30,70,.45)" stroke-width="7" stroke-linecap="round"/>
+<path d="M293,415 A172,172 0 1,1 637,415 A172,172 0 1,1 293,415" fill="none" stroke="rgba(224,64,251,.08)" stroke-width="1.2"/>
+</g>
+<g class="outer-ring" id="outerRing3">
+<path class="pipe-track" d="M63,415 A172,172 0 1,1 407,415 A172,172 0 1,1 63,415" fill="none" stroke="rgba(60,55,20,.45)" stroke-width="7" stroke-linecap="round"/>
+<path d="M63,415 A172,172 0 1,1 407,415 A172,172 0 1,1 63,415" fill="none" stroke="rgba(255,235,59,.08)" stroke-width="1.2"/>
+</g>
 
-<!-- ═══ ETL PIPE-STYLE FLOWING PARTICLES — dark pipe track + bright dots ═══ -->
-<g class="flow-node" style="transition-delay:.1s">
+<!-- ═══ ETL PIPE-STYLE FLOWING PARTICLES — hidden at start ═══ -->
+<g class="outer-dots" id="outerDots">
 <!-- ── CYAN circle (top / User loop) — pipe + flowing dots ── -->
 <circle r="4.5" fill="#00e5ff" opacity=".2" filter="url(#trailCyan)"><animateMotion dur="10s" repeatCount="indefinite" begin="0.00s"><mpath href="#cTop"/></animateMotion></circle>
 <circle r="4.5" fill="#00e5ff" opacity=".2" filter="url(#trailCyan)"><animateMotion dur="10s" repeatCount="indefinite" begin="0.36s"><mpath href="#cTop"/></animateMotion></circle>
@@ -367,16 +376,16 @@
 <circle r="3.5" fill="#ffeb3b" opacity=".95" filter="url(#glowYellow)"><animateMotion dur="10s" repeatCount="indefinite" begin="9.29s"><mpath href="#cBL"/></animateMotion></circle>
 <circle r="3.5" fill="#ffeb3b" opacity=".95" filter="url(#glowYellow)"><animateMotion dur="10s" repeatCount="indefinite" begin="9.64s"><mpath href="#cBL"/></animateMotion></circle>
 <!-- Loop labels -->
-<text x="350" y="72" text-anchor="middle" fill="rgba(0,229,255,.3)" font-size="10" font-weight="700" letter-spacing="3" font-family="system-ui">USER LOOP</text>
+<text x="350" y="5" text-anchor="middle" fill="rgba(0,229,255,.3)" font-size="10" font-weight="700" letter-spacing="3" font-family="system-ui">USER LOOP</text>
 <text x="120" y="540" text-anchor="middle" fill="rgba(255,235,59,.3)" font-size="10" font-weight="700" letter-spacing="3" font-family="system-ui">QUALITY LOOP</text>
 <text x="580" y="540" text-anchor="middle" fill="rgba(224,64,251,.3)" font-size="10" font-weight="700" letter-spacing="3" font-family="system-ui">DATA LOOP</text>
 </g>
 
 <!-- ═══ NODE: User (12 o'clock) ═══ -->
 <g class="flow-node" style="transition-delay:.2s">
-<rect x="275" y="95" width="150" height="58" rx="14" fill="rgba(99,102,241,.15)" stroke="#6366f1" stroke-width="2" filter="url(#nodeGlowU)"/>
-<text x="350" y="124" text-anchor="middle" fill="#c7d2fe" font-size="16" font-weight="700" font-family="system-ui">User</text>
-<text x="350" y="142" text-anchor="middle" fill="#64748b" font-size="9" font-family="system-ui">Investment researcher</text>
+<rect x="275" y="14" width="150" height="58" rx="14" fill="rgba(99,102,241,.15)" stroke="#6366f1" stroke-width="2" filter="url(#nodeGlowU)"/>
+<text x="350" y="43" text-anchor="middle" fill="#c7d2fe" font-size="16" font-weight="700" font-family="system-ui">User</text>
+<text x="350" y="61" text-anchor="middle" fill="#64748b" font-size="9" font-family="system-ui">Investment researcher</text>
 </g>
 
 <!-- ═══ NODE: Analyst (center — triple overlap) ═══ -->
@@ -413,7 +422,7 @@
 <!-- STEP 1: User → Analyst "Queries" — CYAN, arcs right along top circle -->
 <!-- ═══════════════════════════════════════════════ -->
 <g class="fl-step" id="step1">
-<path id="p1" d="M385 153 C 490 155, 510 280, 388 281" stroke="none" fill="none"/>
+<path id="p1" d="M385 72 C 490 75, 510 280, 388 281" stroke="none" fill="none"/>
 <circle r="9" fill="#00e5ff" opacity=".15" filter="url(#trailCyan)"><animateMotion dur="3s" repeatCount="indefinite" begin="0s"><mpath href="#p1"/></animateMotion></circle>
 <circle r="3.5" fill="#00e5ff" filter="url(#glowCyan)"><animateMotion dur="3s" repeatCount="indefinite" begin="0s"><mpath href="#p1"/></animateMotion></circle>
 <circle r="9" fill="#00e5ff" opacity=".15" filter="url(#trailCyan)"><animateMotion dur="3s" repeatCount="indefinite" begin="0.375s"><mpath href="#p1"/></animateMotion></circle>
@@ -555,7 +564,7 @@
 
 <!-- Step counter -->
 <g class="flow-node" style="transition-delay:1s">
-<text x="350" y="650" text-anchor="middle" fill="#475569" font-size="11" font-family="system-ui" letter-spacing="1" id="stepCounter">Step 0 / 6 &mdash; tap to begin</text>
+<text x="350" y="650" text-anchor="middle" fill="#475569" font-size="11" font-family="system-ui" letter-spacing="1" id="stepCounter">Tap to reveal the architecture</text>
 </g>
 </svg>
 </div>
