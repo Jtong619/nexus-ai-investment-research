@@ -13,6 +13,16 @@ document.querySelectorAll('.col-text,.col-visual,.s-text,.s-visual').forEach(fun
 var fObs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){var nodes=e.target.querySelectorAll('.flow-node');nodes.forEach(function(n,i){setTimeout(function(){n.classList.add('visible')},i*200)});fObs.unobserve(e.target)}})},{threshold:.15});
 document.querySelectorAll('.flow-chart').forEach(function(el){fObs.observe(el)});
 
+var flowStep=0;var flowMax=6;
+var fc=document.getElementById('flowChart');
+var sc=document.getElementById('stepCounter');
+if(fc){fc.addEventListener('click',function(){
+flowStep++;if(flowStep>flowMax)return;
+var s=document.getElementById('step'+flowStep);
+if(s)s.classList.add('revealed');
+if(sc){if(flowStep<flowMax)sc.textContent='Step '+flowStep+' / '+flowMax+' \u2014 tap for next';else sc.textContent='Step '+flowStep+' / '+flowMax+' \u2014 complete \u2713'}
+})}
+
 var painObs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){var items=e.target.querySelectorAll('.pain-item');items.forEach(function(item,i){setTimeout(function(){item.classList.add('visible')},i*200)});painObs.unobserve(e.target)}})},{threshold:.3});
 document.querySelectorAll('.pain-list').forEach(function(el){painObs.observe(el)});
 

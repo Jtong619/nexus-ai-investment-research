@@ -143,19 +143,20 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI','H
 .flow-tag{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#818cf8;margin-bottom:16px}
 .flow-title{font-size:clamp(28px,4vw,48px);font-weight:700;line-height:1.1;letter-spacing:-1px;color:#f1f5f9;margin-bottom:16px}
 .flow-title .purple-accent{background:linear-gradient(135deg,#a78bfa,#6366f1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.flow-sub{font-size:clamp(15px,1.6vw,18px);color:#94a3b8;line-height:1.6;max-width:660px;margin:0 auto 48px}
-.flow-chart{position:relative;width:100%;max-width:780px;margin:0 auto}
+.flow-sub{font-size:clamp(15px,1.6vw,18px);color:#94a3b8;line-height:1.6;max-width:660px;margin:0 auto 12px}
+.flow-hint{font-size:13px;color:#818cf8;margin-bottom:36px;cursor:pointer;letter-spacing:.5px}
+.flow-hint span{display:inline-block;animation:hintPulse 2s ease-in-out infinite}
+@keyframes hintPulse{0%,100%{opacity:.6}50%{opacity:1}}
+.flow-chart{position:relative;width:100%;max-width:720px;margin:0 auto;cursor:pointer;-webkit-tap-highlight-color:transparent}
 .flow-chart svg{width:100%;height:auto}
 .flow-node{opacity:0;transform:translateY(15px);transition:opacity .6s ease,transform .6s ease}
 .flow-node.visible{opacity:1;transform:translateY(0)}
-@keyframes dashFlow{from{stroke-dashoffset:24}to{stroke-dashoffset:0}}
-@keyframes dashFlowRev{from{stroke-dashoffset:0}to{stroke-dashoffset:24}}
 @keyframes pulseGlow{0%,100%{opacity:.45}50%{opacity:1}}
-@keyframes arrowTravel{from{stroke-dashoffset:60}to{stroke-dashoffset:0}}
-.fl-main{stroke-width:3;stroke-dasharray:12 6;animation:dashFlow 1.2s linear infinite;filter:url(#glowLine)}
-.fl-feedback{stroke-width:2.5;stroke-dasharray:8 5;animation:dashFlowRev 1.4s linear infinite;filter:url(#glowPurple)}
-.fl-sched{stroke-width:2;stroke-dasharray:6 4;animation:arrowTravel 2s linear infinite;opacity:.7}
 .flow-glow{animation:pulseGlow 2s ease-in-out infinite}
+.fl-step{opacity:0;transition:opacity .8s ease}
+.fl-step.revealed{opacity:1}
+.fl-arrow{stroke-width:3;stroke-linecap:round}
+.fl-dot{filter:url(#glowDot)}
 
 @media(max-width:768px){.p-container,.s-container{grid-template-columns:1fr;gap:40px}.col-visual{height:320px}}
 @media(max-width:640px){.counter-bar{gap:28px}.counter-divider{display:none}.logo-text{font-size:15px;letter-spacing:5px}}
