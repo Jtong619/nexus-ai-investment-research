@@ -35,7 +35,7 @@ var chatCursor=document.getElementById('chatCursor');
 if(chatBox){
 var convos=[
 {q:"Analyze NVDA for me",a:'<div class="fp-chart"><div class="fp-chart-title">NVDA Factor Profile</div><div class="fp-chart-body"><div class="fp-arrow"><span>High</span><div class="fp-arrow-line"></div><span>Low</span></div><div class="fp-chart-axis"><span>Q1</span><span>Q2</span><span>Q3</span><span>Q4</span><span>Q5</span></div><div class="fp-chart-cols"><div class="fp-col"><div class="fp-col-bar"><div class="fp-q"></div><div class="fp-q"></div><div class="fp-q"></div><div class="fp-q"></div><div class="fp-q active"></div></div><div class="fp-col-label">Value</div></div><div class="fp-col"><div class="fp-col-bar"><div class="fp-q active"></div><div class="fp-q"></div><div class="fp-q"></div><div class="fp-q"></div><div class="fp-q"></div></div><div class="fp-col-label">Growth</div></div><div class="fp-col"><div class="fp-col-bar"><div class="fp-q"></div><div class="fp-q"></div><div class="fp-q"></div><div class="fp-q active"></div><div class="fp-q"></div></div><div class="fp-col-label">Yield</div></div><div class="fp-col"><div class="fp-col-bar"><div class="fp-q"></div><div class="fp-q active"></div><div class="fp-q"></div><div class="fp-q"></div><div class="fp-q"></div></div><div class="fp-col-label">Revision</div></div><div class="fp-col"><div class="fp-col-bar"><div class="fp-q active"></div><div class="fp-q"></div><div class="fp-q"></div><div class="fp-q"></div><div class="fp-q"></div></div><div class="fp-col-label">Momentum</div></div><div class="fp-col"><div class="fp-col-bar"><div class="fp-q active"></div><div class="fp-q"></div><div class="fp-q"></div><div class="fp-q"></div><div class="fp-q"></div></div><div class="fp-col-label">Quality</div></div><div class="fp-col"><div class="fp-col-bar"><div class="fp-q active"></div><div class="fp-q"></div><div class="fp-q"></div><div class="fp-q"></div><div class="fp-q"></div></div><div class="fp-col-label">GARP</div></div><div class="fp-col"><div class="fp-col-bar"><div class="fp-q active"></div><div class="fp-q"></div><div class="fp-q"></div><div class="fp-q"></div><div class="fp-q"></div></div><div class="fp-col-label">LowRisk</div></div></div></div></div><br><div class="ns-badge">Nexus Score: 87/100 <div class="ns-bar"><div class="ns-bar-fill" style="width:87%"></div></div></div><br><strong>Direction:</strong> BUY &nbsp;|&nbsp; <strong>Conviction:</strong> HIGH &nbsp;|&nbsp; <strong>Horizon:</strong> 6\u201312 Mo<br><br><strong>Key Metrics:</strong><br>\u2022 TTM Revenue: $130.5B (+122% YoY)<br>\u2022 TTM FCF: $60.9B (46.7% margin)<br>\u2022 Gross Margin: 78.4%<br>\u2022 Fwd P/E: 38x<br><br><strong>Thesis:</strong> NVIDIA dominates AI accelerator infrastructure with 80%+ datacenter GPU market share. Revenue growth is structural, driven by hyperscaler capex and enterprise AI adoption. Margin expansion continues as CUDA ecosystem lock-in deepens.'},
-{q:"Show me the DCF model",a:'<strong>DCF Analysis \u2014 NVDA</strong><br><br><div class="dcf-dl-btn-green" id="dcfBtn1"><span class="dl-icon">\u2B07</span> Download Excel for DCF Modification <div class="dl-progress"><div class="dl-progress-bar"></div></div><span class="dl-check">\u2713 Downloaded</span></div><div class="dcf-sheet" id="dcfSheet" style="display:none"><div class="dcf-sheet-bar"><span>\u2630 NVDA_DCF_Model.xlsx</span></div><table><tr><th>Assumption</th><th>Value</th></tr><tr><td>Revenue Growth (Y1)</td><td class="dcf-editable" id="dcfRg">55.0%</td></tr><tr><td>Revenue Growth (Y2\u20135)</td><td class="dcf-editable" id="dcfRg2">28.0%</td></tr><tr><td>Terminal Growth</td><td class="dcf-editable" id="dcfTg">3.5%</td></tr><tr><td>WACC</td><td class="dcf-editable" id="dcfWacc">10.2%</td></tr><tr><td>FCF Margin (Stable)</td><td class="dcf-editable" id="dcfFcf">42.0%</td></tr><tr style="border-top:2px solid rgba(34,197,94,.2)"><td style="color:#4ade80;font-weight:700">DCF Fair Value</td><td class="dcf-result" id="dcfResult">$152.80</td></tr><tr><td style="color:#64748b">Upside from Current</td><td style="color:#4ade80;font-weight:700" id="dcfUpside">+18.4%</td></tr></table></div>'}
+{q:"Show me the DCF model",a:'<strong>DCF Analysis \u2014 NVDA</strong><br><br>I\u2019ve prepared a full 5-year DCF model for NVIDIA. You can modify any assumption and the fair value updates instantly.<br><br><div class="dcf-dl-btn-green" id="dcfBtn1"><span class="dl-icon">\u2B07</span> Download Excel for DCF Modification <div class="dl-progress"><div class="dl-progress-bar"></div></div><span class="dl-check">\u2713 Opening spreadsheet...</span></div>'}
 ];
 var avU='<div class="chat-avatar chat-av-u">You</div>';
 var avA='<div class="chat-avatar chat-av-a"><svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M12 2L21 7v10l-9 5-9-5V7l9-5z" stroke="#6366f1" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="#6366f1" opacity=".7"/></svg></div>';
@@ -45,43 +45,59 @@ function addMsg(cls,avatar,html){var d=document.createElement('div');d.className
 function addDots(){var d=document.createElement('div');d.className='chat-msg chat-ai';d.innerHTML=avA+'<div class="chat-typing"><span></span><span></span><span></span></div>';d.style.animation='chatFadeIn .3s ease forwards';chatBox.appendChild(d);scrollChat();return d}
 function animDcfDownloadAndEdit(){
 var btn=document.getElementById('dcfBtn1');
-var sheet=document.getElementById('dcfSheet');
+var overlay=document.getElementById('dcfOverlay');
 if(!btn)return;
 setTimeout(function(){
 btn.classList.add('downloading');
 setTimeout(function(){
 btn.classList.remove('downloading');btn.classList.add('done');
 setTimeout(function(){
-if(sheet){sheet.style.display='block';sheet.style.animation='chatFadeIn .4s ease forwards'}
-scrollChat();
+if(overlay)overlay.classList.add('active');
 setTimeout(function(){
 var edits=[
-{id:'dcfRg',val:'62.0%',result:'$168.50',upside:'+30.6%'},
-{id:'dcfFcf',val:'45.0%',result:'$178.20',upside:'+38.1%'},
-{id:'dcfWacc',val:'9.5%',result:'$195.40',upside:'+51.4%'},
-{id:'dcfTg',val:'4.0%',result:'$204.60',upside:'+58.5%'}
+{id:'xlRg1',val:'62.0%',cell:'C4',rev1:'$209.8B',rev2:'$268.5B',fcf1:'$88.1B',fcf2:'$112.8B',tv:'$3,425.1B',ev:'$3,956.8B',result:'$161.60',upside:'+25.2%'},
+{id:'xlFcf',val:'45.0%',cell:'C8',rev1:'$209.8B',rev2:'$268.5B',fcf1:'$94.4B',fcf2:'$120.8B',tv:'$3,670.5B',ev:'$4,202.2B',result:'$171.60',upside:'+33.0%'},
+{id:'xlWacc',val:'9.5%',cell:'C7',rev1:'$209.8B',rev2:'$268.5B',fcf1:'$94.4B',fcf2:'$120.8B',tv:'$4,120.8B',ev:'$4,652.5B',result:'$190.00',upside:'+47.2%'},
+{id:'xlTg',val:'4.0%',cell:'C6',rev1:'$209.8B',rev2:'$268.5B',fcf1:'$94.4B',fcf2:'$120.8B',tv:'$4,585.2B',ev:'$5,116.9B',result:'$208.90',upside:'+61.9%'}
 ];
 var ei=0;
 function editNext(){
-if(ei>=edits.length){scrollChat();return}
+if(ei>=edits.length){
+setTimeout(function(){if(overlay)overlay.classList.remove('active')},3000);
+return}
 var e=edits[ei];ei++;
 var cell=document.getElementById(e.id);
-var res=document.getElementById('dcfResult');
-var ups=document.getElementById('dcfUpside');
+var fb=document.getElementById('fbCell');
+var fv=document.getElementById('fbVal');
 if(!cell){editNext();return}
-cell.innerHTML='<span class="dcf-cursor"></span>';
+cell.classList.add('editing');
+if(fb)fb.textContent=e.cell;
+if(fv)fv.textContent=cell.textContent;
 setTimeout(function(){
-cell.textContent=e.val;
-cell.classList.add('dcf-highlight');
-if(res){res.textContent=e.result;res.style.animation='dcfFlash .6s ease'}
+cell.textContent=e.val;cell.classList.remove('editing');cell.classList.add('flash');
+if(fv)fv.textContent=e.val;
+var r1=document.getElementById('xlRev1');var r2=document.getElementById('xlRev2');
+var f1=document.getElementById('xlFcf1');var f2=document.getElementById('xlFcf2');
+var tv=document.getElementById('xlTv');var ev=document.getElementById('xlEv');
+var res=document.getElementById('xlResult');var ups=document.getElementById('xlUpside');
+if(r1)r1.textContent=e.rev1;if(r2)r2.textContent=e.rev2;
+if(f1){f1.textContent=e.fcf1;f1.classList.add('flash')}
+if(f2){f2.textContent=e.fcf2;f2.classList.add('flash')}
+if(tv){tv.textContent=e.tv;tv.classList.add('flash')}
+if(ev)ev.textContent=e.ev;
+if(res){res.textContent=e.result;res.classList.add('flash')}
 if(ups)ups.textContent=e.upside;
-scrollChat();
-setTimeout(function(){cell.classList.remove('dcf-highlight');setTimeout(editNext,700)},800);
-},600);
+setTimeout(function(){
+cell.classList.remove('flash');
+if(f1)f1.classList.remove('flash');if(f2)f2.classList.remove('flash');
+if(tv)tv.classList.remove('flash');if(res)res.classList.remove('flash');
+setTimeout(editNext,600);
+},800);
+},700);
 }
 editNext();
-},800);
 },600);
+},500);
 },2000);
 },800);
 }

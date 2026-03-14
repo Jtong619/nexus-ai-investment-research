@@ -92,7 +92,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI','H
 .nav-links{display:flex;gap:16px}
 .nav-link{font-size:12px;color:#64748b;cursor:pointer;padding:4px 0;border-bottom:2px solid transparent}
 .nav-link.active{color:#c7d2fe;border-bottom-color:#6366f1}
-.browser-content{display:grid;grid-template-columns:1.8fr 1fr;height:620px;max-height:620px;overflow:hidden}
+.browser-content{display:grid;grid-template-columns:1.8fr 1fr;height:620px;max-height:620px;overflow:hidden;position:relative}
 .dash-left{border-right:1px solid rgba(99,102,241,.08);display:flex;flex-direction:column;overflow-y:auto;overflow-x:hidden;scrollbar-width:thin;scrollbar-color:rgba(99,102,241,.15) transparent}
 .dash-right{display:flex;flex-direction:column;height:100%;max-height:620px;overflow:hidden}
 .analysis-panel{padding:14px 16px;border-bottom:1px solid rgba(99,102,241,.08)}
@@ -175,16 +175,31 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI','H
 .chat-input-anim{display:flex;align-items:center;gap:8px;padding:10px 14px;border-top:1px solid rgba(99,102,241,.08);background:rgba(15,23,42,.3)}
 .type-cursor{display:inline-block;width:1px;height:13px;background:#a5b4fc;animation:blink 1s step-end infinite;vertical-align:middle;margin-left:1px}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
-.dcf-sheet{background:rgba(15,23,42,.7);border:1px solid rgba(99,102,241,.15);border-radius:6px;overflow:hidden;margin-top:8px;font-size:10px}
-.dcf-sheet-bar{display:flex;align-items:center;gap:6px;padding:5px 10px;background:rgba(34,197,94,.08);border-bottom:1px solid rgba(34,197,94,.15)}
-.dcf-sheet-bar span{color:#4ade80;font-weight:700;font-size:9px;letter-spacing:.5px}
-.dcf-sheet table{width:100%;border-collapse:collapse}
-.dcf-sheet td,.dcf-sheet th{padding:4px 8px;border-bottom:1px solid rgba(99,102,241,.06);color:#94a3b8;font-size:9px;text-align:right}
-.dcf-sheet th{text-align:left;color:#64748b;font-weight:600;font-size:8px;text-transform:uppercase;letter-spacing:.5px}
-.dcf-sheet .dcf-editable{color:#a5b4fc;background:rgba(99,102,241,.08);border-radius:3px;padding:2px 4px;position:relative}
-.dcf-sheet .dcf-result{color:#4ade80;font-weight:800;font-size:11px}
-.dcf-sheet .dcf-highlight{animation:dcfFlash .6s ease}
-@keyframes dcfFlash{0%{background:rgba(34,197,94,.3)}100%{background:rgba(99,102,241,.08)}}
+.dcf-overlay{position:absolute;inset:0;background:#0c1322;z-index:50;display:none;flex-direction:column;animation:chatFadeIn .4s ease forwards;overflow:hidden}
+.dcf-overlay.active{display:flex}
+.dcf-excel-bar{display:flex;align-items:center;gap:8px;padding:6px 12px;background:#1a2235;border-bottom:1px solid rgba(34,197,94,.15)}
+.dcf-excel-bar .excel-icon{width:16px;height:16px;background:#217346;border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:#fff}
+.dcf-excel-bar .excel-filename{font-size:11px;color:#c7d2fe;font-weight:600}
+.dcf-excel-bar .excel-menu{display:flex;gap:12px;margin-left:16px}
+.dcf-excel-bar .excel-menu span{font-size:9px;color:#64748b}
+.dcf-formula-bar{display:flex;align-items:center;gap:8px;padding:4px 12px;background:#111827;border-bottom:1px solid rgba(99,102,241,.08)}
+.dcf-formula-bar .fb-cell{font-size:9px;color:#fbbf24;font-weight:700;background:rgba(251,191,36,.08);padding:2px 8px;border-radius:3px;border:1px solid rgba(251,191,36,.15);min-width:30px;text-align:center}
+.dcf-formula-bar .fb-fx{font-size:9px;color:#64748b;font-style:italic;margin-left:4px}
+.dcf-formula-bar .fb-val{font-size:9px;color:#94a3b8;flex:1;padding:2px 8px;background:rgba(30,41,59,.5);border:1px solid rgba(99,102,241,.08);border-radius:3px}
+.dcf-grid{flex:1;overflow:auto;padding:0}
+.dcf-grid table{width:100%;border-collapse:collapse;font-size:9px}
+.dcf-grid th{background:#1a2235;color:#64748b;font-weight:600;padding:4px 10px;border:1px solid rgba(99,102,241,.08);position:sticky;top:0;text-align:center;font-size:8px;letter-spacing:.5px}
+.dcf-grid th.col-header{min-width:80px}
+.dcf-grid th.row-header{text-align:left;width:160px;background:#151d2e}
+.dcf-grid td{padding:4px 10px;border:1px solid rgba(99,102,241,.06);color:#94a3b8;text-align:right;font-family:'SF Mono',monospace;font-size:9px}
+.dcf-grid td.row-label{text-align:left;color:#cbd5e1;font-weight:600;background:rgba(15,23,42,.4);font-family:inherit}
+.dcf-grid td.editable{color:#a5b4fc;background:rgba(99,102,241,.05);cursor:text}
+.dcf-grid td.editable.editing{outline:2px solid #6366f1;background:rgba(99,102,241,.1)}
+.dcf-grid td.result-cell{color:#4ade80;font-weight:800;font-size:11px;background:rgba(34,197,94,.05)}
+.dcf-grid td.flash{animation:dcfCellFlash .5s ease}
+@keyframes dcfCellFlash{0%{background:rgba(34,197,94,.25)}100%{background:rgba(99,102,241,.05)}}
+.dcf-grid tr.section-header td{background:rgba(99,102,241,.06);color:#c7d2fe;font-weight:700;font-size:9px;letter-spacing:.5px;text-align:left;padding:5px 10px}
+.dcf-grid tr.result-row td{border-top:2px solid rgba(34,197,94,.2);background:rgba(34,197,94,.03)}
 .dcf-dl-btn-green{display:inline-flex;align-items:center;gap:6px;padding:7px 16px;margin-top:8px;border-radius:6px;background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.3);color:#4ade80;font-size:10px;font-weight:700;cursor:pointer;transition:all .3s ease;letter-spacing:.3px}
 .dcf-dl-btn-green:hover{background:rgba(34,197,94,.25)}
 .dcf-dl-btn-green.downloading{background:rgba(34,197,94,.2);border-color:rgba(34,197,94,.4)}

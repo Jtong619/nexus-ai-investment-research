@@ -63,6 +63,35 @@
 <div class="chaos-icon ci-4"><svg viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg><span>PDFs</span></div>
 <div class="chaos-icon ci-5"><svg viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="12" x2="15" y2="15"/></svg><span>Manual&#160;Checks</span></div>
 <div class="chaos-icon ci-6"><svg viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="1.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg><span>Copy&#8209;Paste</span></div>
+<div class="dcf-overlay" id="dcfOverlay">
+<div class="dcf-excel-bar"><div class="excel-icon">X</div><span class="excel-filename">NVDA_DCF_Model.xlsx</span><div class="excel-menu"><span>File</span><span>Edit</span><span>View</span><span>Insert</span><span>Format</span><span>Data</span></div></div>
+<div class="dcf-formula-bar"><div class="fb-cell" id="fbCell">C4</div><span class="fb-fx">fx</span><div class="fb-val" id="fbVal">55.0%</div></div>
+<div class="dcf-grid">
+<table>
+<tr><th class="row-header"></th><th class="col-header">B</th><th class="col-header">C</th><th class="col-header">D</th><th class="col-header">E</th><th class="col-header">F</th><th class="col-header">G</th></tr>
+<tr class="section-header"><td colspan="7">NVDA &#8212; Discounted Cash Flow Model</td></tr>
+<tr><td class="row-label">Current Price</td><td>$129.05</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="row-label">Shares Outstanding</td><td>24.49B</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="section-header"><td colspan="7">KEY ASSUMPTIONS</td></tr>
+<tr><td class="row-label">Revenue Growth Rate (Y1)</td><td></td><td class="editable" id="xlRg1">55.0%</td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="row-label">Revenue Growth Rate (Y2-5)</td><td></td><td class="editable" id="xlRg2">28.0%</td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="row-label">Terminal Growth Rate</td><td></td><td class="editable" id="xlTg">3.5%</td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="row-label">WACC</td><td></td><td class="editable" id="xlWacc">10.2%</td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="row-label">FCF Margin (Terminal)</td><td></td><td class="editable" id="xlFcf">42.0%</td><td></td><td></td><td></td><td></td></tr>
+<tr class="section-header"><td colspan="7">PROJECTED FREE CASH FLOW ($B)</td></tr>
+<tr><td class="row-label"></td><td style="color:#64748b;font-weight:600">Year 1</td><td style="color:#64748b;font-weight:600">Year 2</td><td style="color:#64748b;font-weight:600">Year 3</td><td style="color:#64748b;font-weight:600">Year 4</td><td style="color:#64748b;font-weight:600">Year 5</td><td style="color:#64748b;font-weight:600">Terminal</td></tr>
+<tr><td class="row-label">Revenue</td><td id="xlRev1">$202.3B</td><td id="xlRev2">$258.9B</td><td id="xlRev3">$331.4B</td><td id="xlRev4">$424.2B</td><td id="xlRev5">$543.0B</td><td></td></tr>
+<tr><td class="row-label">FCF</td><td id="xlFcf1">$85.0B</td><td id="xlFcf2">$108.7B</td><td id="xlFcf3">$139.2B</td><td id="xlFcf4">$178.1B</td><td id="xlFcf5">$228.1B</td><td></td></tr>
+<tr><td class="row-label">PV of FCF</td><td>$77.1B</td><td>$89.5B</td><td>$104.0B</td><td>$120.8B</td><td>$140.3B</td><td></td></tr>
+<tr class="section-header"><td colspan="7">VALUATION</td></tr>
+<tr><td class="row-label">Sum of PV (FCF)</td><td>$531.7B</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="row-label">Terminal Value (PV)</td><td id="xlTv">$3,210.5B</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="row-label">Enterprise Value</td><td id="xlEv">$3,742.2B</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="result-row"><td class="row-label" style="color:#4ade80;font-weight:800">DCF Fair Value / Share</td><td class="result-cell" id="xlResult">$152.80</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="result-row"><td class="row-label">Upside from Current</td><td class="result-cell" id="xlUpside">+18.4%</td><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -135,6 +164,35 @@
 <div class="chat-header"><span class="chat-icon">&#9679;</span> Nexus AI Research Assistant</div>
 <div class="chat-anim-container" id="chatAnim"></div>
 <div class="chat-input-anim"><span style="font-size:14px;color:#64748b">&#9997;</span><span id="chatInputText" style="font-size:12px;color:#475569"></span><span class="type-cursor" id="chatCursor" style="display:none"></span></div>
+</div>
+</div>
+<div class="dcf-overlay" id="dcfOverlay">
+<div class="dcf-excel-bar"><div class="excel-icon">X</div><span class="excel-filename">NVDA_DCF_Model.xlsx</span><div class="excel-menu"><span>File</span><span>Edit</span><span>View</span><span>Insert</span><span>Format</span><span>Data</span></div></div>
+<div class="dcf-formula-bar"><div class="fb-cell" id="fbCell">C4</div><span class="fb-fx">fx</span><div class="fb-val" id="fbVal">55.0%</div></div>
+<div class="dcf-grid">
+<table>
+<tr><th class="row-header"></th><th class="col-header">B</th><th class="col-header">C</th><th class="col-header">D</th><th class="col-header">E</th><th class="col-header">F</th><th class="col-header">G</th></tr>
+<tr class="section-header"><td colspan="7">NVDA &#8212; Discounted Cash Flow Model</td></tr>
+<tr><td class="row-label">Current Price</td><td>$129.05</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="row-label">Shares Outstanding</td><td>24.49B</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="section-header"><td colspan="7">KEY ASSUMPTIONS</td></tr>
+<tr><td class="row-label">Revenue Growth Rate (Y1)</td><td></td><td class="editable" id="xlRg1">55.0%</td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="row-label">Revenue Growth Rate (Y2-5)</td><td></td><td class="editable" id="xlRg2">28.0%</td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="row-label">Terminal Growth Rate</td><td></td><td class="editable" id="xlTg">3.5%</td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="row-label">WACC</td><td></td><td class="editable" id="xlWacc">10.2%</td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="row-label">FCF Margin (Terminal)</td><td></td><td class="editable" id="xlFcf">42.0%</td><td></td><td></td><td></td><td></td></tr>
+<tr class="section-header"><td colspan="7">PROJECTED FREE CASH FLOW ($B)</td></tr>
+<tr><td class="row-label"></td><td style="color:#64748b;font-weight:600">Year 1</td><td style="color:#64748b;font-weight:600">Year 2</td><td style="color:#64748b;font-weight:600">Year 3</td><td style="color:#64748b;font-weight:600">Year 4</td><td style="color:#64748b;font-weight:600">Year 5</td><td style="color:#64748b;font-weight:600">Terminal</td></tr>
+<tr><td class="row-label">Revenue</td><td id="xlRev1">$202.3B</td><td id="xlRev2">$258.9B</td><td id="xlRev3">$331.4B</td><td id="xlRev4">$424.2B</td><td id="xlRev5">$543.0B</td><td></td></tr>
+<tr><td class="row-label">FCF</td><td id="xlFcf1">$85.0B</td><td id="xlFcf2">$108.7B</td><td id="xlFcf3">$139.2B</td><td id="xlFcf4">$178.1B</td><td id="xlFcf5">$228.1B</td><td></td></tr>
+<tr><td class="row-label">PV of FCF</td><td>$77.1B</td><td>$89.5B</td><td>$104.0B</td><td>$120.8B</td><td>$140.3B</td><td></td></tr>
+<tr class="section-header"><td colspan="7">VALUATION</td></tr>
+<tr><td class="row-label">Sum of PV (FCF)</td><td>$531.7B</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="row-label">Terminal Value (PV)</td><td id="xlTv">$3,210.5B</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="row-label">Enterprise Value</td><td id="xlEv">$3,742.2B</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="result-row"><td class="row-label" style="color:#4ade80;font-weight:800">DCF Fair Value / Share</td><td class="result-cell" id="xlResult">$152.80</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr class="result-row"><td class="row-label">Upside from Current</td><td class="result-cell" id="xlUpside">+18.4%</td><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
 </div>
 </div>
 </div>
