@@ -34,8 +34,8 @@ var chatInput=document.getElementById('chatInputText');
 var chatCursor=document.getElementById('chatCursor');
 if(chatBox){
 var convos=[
-{q:"Analyze NVDA for me",a:'<strong>NVDA Factor/Style Positioning</strong><br><br><span class="factor-pill fp-pos">Strong Datacenter Demand</span> <span class="factor-pill fp-pos">Earnings Visibility</span> <span class="factor-pill fp-pos">Margin Expansion</span> <span class="factor-pill fp-neg">Elevated Valuation</span> <span class="factor-pill fp-pos">FCF Growth</span> <span class="factor-pill fp-neg">Export Controls</span><br><br><div class="ns-badge">Nexus Score: 87/100 <div class="ns-bar"><div class="ns-bar-fill" style="width:87%"></div></div></div><br><strong>Direction:</strong> BUY &nbsp;|&nbsp; <strong>Conviction:</strong> HIGH &nbsp;|&nbsp; <strong>Horizon:</strong> 6\u201312 Mo<br><br><strong>5-Factor Breakdown:</strong><br><span class="factor-pill fp-pos">Macro 82</span> <span class="factor-pill fp-pos">Fundamental 91</span> <span class="factor-pill fp-pos">Technical 85</span> <span class="factor-pill fp-neu">Event 78</span> <span class="factor-pill fp-pos">Quant 89</span><br><br><strong>Key Metrics:</strong><br>\u2022 TTM Revenue: $130.5B (+122% YoY)<br>\u2022 TTM FCF: $60.9B (46.7% margin)<br>\u2022 Gross Margin: 78.4%<br>\u2022 Fwd P/E: 38x<br><br><strong>Thesis:</strong> NVIDIA dominates AI accelerator infrastructure with 80%+ datacenter GPU market share. Revenue growth is structural, driven by hyperscaler capex and enterprise AI adoption. Margin expansion continues as software attach rates increase via CUDA ecosystem lock-in.'},
-{q:"Show me the DCF model",a:'<strong>Discounted Cash Flow Analysis \u2014 NVDA</strong><br><br><div class="dcf-sheet"><div class="dcf-sheet-bar"><span>\u2630 NVDA_DCF_Model.xlsx</span></div><table><tr><th>Assumption</th><th>Value</th></tr><tr><td>Revenue Growth (Y1)</td><td class="dcf-editable" id="dcfRg">55.0%</td></tr><tr><td>Revenue Growth (Y2\u20135)</td><td class="dcf-editable" id="dcfRg2">28.0%</td></tr><tr><td>Terminal Growth</td><td class="dcf-editable" id="dcfTg">3.5%</td></tr><tr><td>WACC</td><td class="dcf-editable" id="dcfWacc">10.2%</td></tr><tr><td>FCF Margin (Stable)</td><td class="dcf-editable" id="dcfFcf">42.0%</td></tr><tr style="border-top:2px solid rgba(34,197,94,.2)"><td style="color:#4ade80;font-weight:700">DCF Fair Value</td><td class="dcf-result" id="dcfResult">$152.80</td></tr><tr><td style="color:#64748b">Upside from Current</td><td style="color:#4ade80;font-weight:700" id="dcfUpside">+18.4%</td></tr></table></div><br><div class="dcf-dl-btn-green" id="dcfBtn1"><span class="dl-icon">\u2B07</span> Download Excel for DCF Modification <div class="dl-progress"><div class="dl-progress-bar"></div></div><span class="dl-check">\u2713 NVDA_DCF_Model.xlsx saved</span></div>'}
+{q:"Analyze NVDA for me",a:'<div class="fp-chart"><div class="fp-chart-title">NVDA Factor Profile</div><div class="fp-chart-body"><div class="fp-arrow"><span>High</span><div class="fp-arrow-line"></div><span>Low</span></div><div class="fp-chart-axis"><span>Q1</span><span>Q2</span><span>Q3</span><span>Q4</span><span>Q5</span></div><div class="fp-chart-cols"><div class="fp-col"><div class="fp-col-bar"><div class="fp-q"></div><div class="fp-q"></div><div class="fp-q"></div><div class="fp-q"></div><div class="fp-q active"></div></div><div class="fp-col-label">Value</div></div><div class="fp-col"><div class="fp-col-bar"><div class="fp-q active"></div><div class="fp-q"></div><div class="fp-q"></div><div class="fp-q"></div><div class="fp-q"></div></div><div class="fp-col-label">Growth</div></div><div class="fp-col"><div class="fp-col-bar"><div class="fp-q"></div><div class="fp-q"></div><div class="fp-q"></div><div class="fp-q active"></div><div class="fp-q"></div></div><div class="fp-col-label">Yield</div></div><div class="fp-col"><div class="fp-col-bar"><div class="fp-q"></div><div class="fp-q active"></div><div class="fp-q"></div><div class="fp-q"></div><div class="fp-q"></div></div><div class="fp-col-label">Revision</div></div><div class="fp-col"><div class="fp-col-bar"><div class="fp-q active"></div><div class="fp-q"></div><div class="fp-q"></div><div class="fp-q"></div><div class="fp-q"></div></div><div class="fp-col-label">Momentum</div></div><div class="fp-col"><div class="fp-col-bar"><div class="fp-q active"></div><div class="fp-q"></div><div class="fp-q"></div><div class="fp-q"></div><div class="fp-q"></div></div><div class="fp-col-label">Quality</div></div><div class="fp-col"><div class="fp-col-bar"><div class="fp-q active"></div><div class="fp-q"></div><div class="fp-q"></div><div class="fp-q"></div><div class="fp-q"></div></div><div class="fp-col-label">GARP</div></div><div class="fp-col"><div class="fp-col-bar"><div class="fp-q active"></div><div class="fp-q"></div><div class="fp-q"></div><div class="fp-q"></div><div class="fp-q"></div></div><div class="fp-col-label">LowRisk</div></div></div></div></div><br><div class="ns-badge">Nexus Score: 87/100 <div class="ns-bar"><div class="ns-bar-fill" style="width:87%"></div></div></div><br><strong>Direction:</strong> BUY &nbsp;|&nbsp; <strong>Conviction:</strong> HIGH &nbsp;|&nbsp; <strong>Horizon:</strong> 6\u201312 Mo<br><br><strong>Key Metrics:</strong><br>\u2022 TTM Revenue: $130.5B (+122% YoY)<br>\u2022 TTM FCF: $60.9B (46.7% margin)<br>\u2022 Gross Margin: 78.4%<br>\u2022 Fwd P/E: 38x<br><br><strong>Thesis:</strong> NVIDIA dominates AI accelerator infrastructure with 80%+ datacenter GPU market share. Revenue growth is structural, driven by hyperscaler capex and enterprise AI adoption. Margin expansion continues as CUDA ecosystem lock-in deepens.'},
+{q:"Show me the DCF model",a:'<strong>DCF Analysis \u2014 NVDA</strong><br><br><div class="dcf-dl-btn-green" id="dcfBtn1"><span class="dl-icon">\u2B07</span> Download Excel for DCF Modification <div class="dl-progress"><div class="dl-progress-bar"></div></div><span class="dl-check">\u2713 Downloaded</span></div><div class="dcf-sheet" id="dcfSheet" style="display:none"><div class="dcf-sheet-bar"><span>\u2630 NVDA_DCF_Model.xlsx</span></div><table><tr><th>Assumption</th><th>Value</th></tr><tr><td>Revenue Growth (Y1)</td><td class="dcf-editable" id="dcfRg">55.0%</td></tr><tr><td>Revenue Growth (Y2\u20135)</td><td class="dcf-editable" id="dcfRg2">28.0%</td></tr><tr><td>Terminal Growth</td><td class="dcf-editable" id="dcfTg">3.5%</td></tr><tr><td>WACC</td><td class="dcf-editable" id="dcfWacc">10.2%</td></tr><tr><td>FCF Margin (Stable)</td><td class="dcf-editable" id="dcfFcf">42.0%</td></tr><tr style="border-top:2px solid rgba(34,197,94,.2)"><td style="color:#4ade80;font-weight:700">DCF Fair Value</td><td class="dcf-result" id="dcfResult">$152.80</td></tr><tr><td style="color:#64748b">Upside from Current</td><td style="color:#4ade80;font-weight:700" id="dcfUpside">+18.4%</td></tr></table></div>'}
 ];
 var avU='<div class="chat-avatar chat-av-u">You</div>';
 var avA='<div class="chat-avatar chat-av-a"><svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M12 2L21 7v10l-9 5-9-5V7l9-5z" stroke="#6366f1" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="#6366f1" opacity=".7"/></svg></div>';
@@ -44,11 +44,16 @@ function scrollChat(){setTimeout(function(){chatBox.scrollTop=chatBox.scrollHeig
 function addMsg(cls,avatar,html){var d=document.createElement('div');d.className='chat-msg '+cls;d.innerHTML=avatar+'<div class="chat-bubble '+(cls==='chat-user'?'chat-bub-u':'chat-bub-a')+'">'+(cls==='chat-ai'?'<div class="chat-ai-label">Nexus AI</div>':'')+html+'</div>';d.style.animation='chatFadeIn .4s ease forwards';chatBox.appendChild(d);scrollChat();return d}
 function addDots(){var d=document.createElement('div');d.className='chat-msg chat-ai';d.innerHTML=avA+'<div class="chat-typing"><span></span><span></span><span></span></div>';d.style.animation='chatFadeIn .3s ease forwards';chatBox.appendChild(d);scrollChat();return d}
 function animDcfDownloadAndEdit(){
-var btn=document.getElementById('dcfBtn1');if(!btn)return;
+var btn=document.getElementById('dcfBtn1');
+var sheet=document.getElementById('dcfSheet');
+if(!btn)return;
 setTimeout(function(){
 btn.classList.add('downloading');
 setTimeout(function(){
 btn.classList.remove('downloading');btn.classList.add('done');
+setTimeout(function(){
+if(sheet){sheet.style.display='block';sheet.style.animation='chatFadeIn .4s ease forwards'}
+scrollChat();
 setTimeout(function(){
 var edits=[
 {id:'dcfRg',val:'62.0%',result:'$168.50',upside:'+30.6%'},
@@ -68,14 +73,15 @@ cell.innerHTML='<span class="dcf-cursor"></span>';
 setTimeout(function(){
 cell.textContent=e.val;
 cell.classList.add('dcf-highlight');
-if(res)res.textContent=e.result;
+if(res){res.textContent=e.result;res.style.animation='dcfFlash .6s ease'}
 if(ups)ups.textContent=e.upside;
 scrollChat();
-setTimeout(function(){cell.classList.remove('dcf-highlight');setTimeout(editNext,600)},800);
-},500);
+setTimeout(function(){cell.classList.remove('dcf-highlight');setTimeout(editNext,700)},800);
+},600);
 }
 editNext();
-},1200);
+},800);
+},600);
 },2000);
 },800);
 }
