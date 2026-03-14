@@ -43,9 +43,9 @@ function typeText(el,text,cb){var i=0;chatCursor.style.display='inline-block';fu
 function scrollChat(){setTimeout(function(){chatBox.scrollTop=chatBox.scrollHeight},50)}
 function addMsg(cls,avatar,html){var d=document.createElement('div');d.className='chat-msg '+cls;d.innerHTML=avatar+'<div class="chat-bubble '+(cls==='chat-user'?'chat-bub-u':'chat-bub-a')+'">'+(cls==='chat-ai'?'<div class="chat-ai-label">Nexus AI</div>':'')+html+'</div>';d.style.animation='chatFadeIn .4s ease forwards';chatBox.appendChild(d);scrollChat();return d}
 function addDots(){var d=document.createElement('div');d.className='chat-msg chat-ai';d.innerHTML=avA+'<div class="chat-typing"><span></span><span></span><span></span></div>';d.style.animation='chatFadeIn .3s ease forwards';chatBox.appendChild(d);scrollChat();return d}
+var overlay=document.getElementById('dcfOverlay');
 function animDcfDownloadAndEdit(){
 var btn=document.getElementById('dcfBtn1');
-var overlay=document.getElementById('dcfOverlay');
 if(!btn)return;
 setTimeout(function(){
 btn.classList.add('downloading');
@@ -63,7 +63,6 @@ var edits=[
 var ei=0;
 function editNext(){
 if(ei>=edits.length){
-setTimeout(function(){if(overlay)overlay.classList.remove('active')},3000);
 return}
 var e=edits[ei];ei++;
 var cell=document.getElementById(e.id);
@@ -106,7 +105,7 @@ function runConvo(){if(!chatBox)return;var c=convos[ci%convos.length];ci++;
 typeText(chatInput,c.q,function(){chatInput.textContent='';addMsg('chat-user',avU,c.q);
 var dots=addDots();setTimeout(function(){if(chatBox.contains(dots))chatBox.removeChild(dots);addMsg('chat-ai',avA,c.a);
 if(ci===2)animDcfDownloadAndEdit();
-setTimeout(function(){if(ci<convos.length){runConvo()}else{setTimeout(function(){chatBox.innerHTML='';ci=0;chatInput.textContent='Ask about any S&P 500 ticker...';setTimeout(runConvo,2000)},8000)}},ci===2?12000:3000)},1500)})}
+setTimeout(function(){if(ci<convos.length){runConvo()}else{setTimeout(function(){if(overlay)overlay.classList.remove('active');chatBox.innerHTML='';ci=0;chatInput.textContent='Ask about any S&P 500 ticker...';var resets=[['xlRg1','55.0%'],['xlRg2','28.0%'],['xlTg','3.5%'],['xlWacc','10.2%'],['xlFcf','42.0%'],['xlRev1','$202.3B'],['xlRev2','$258.9B'],['xlFcf1','$85.0B'],['xlFcf2','$108.7B'],['xlTv','$3,210.5B'],['xlEv','$3,742.2B'],['xlResult','$152.80'],['xlUpside','+18.4%']];resets.forEach(function(r){var el=document.getElementById(r[0]);if(el)el.textContent=r[1]});var fbC=document.getElementById('fbCell');var fbV=document.getElementById('fbVal');if(fbC)fbC.textContent='C4';if(fbV)fbV.textContent='55.0%';setTimeout(runConvo,2000)},6000)}},ci===2?12000:3000)},1500)})}
 chatInput.textContent='Ask about any S&P 500 ticker...';
 setTimeout(runConvo,2000);
 }
