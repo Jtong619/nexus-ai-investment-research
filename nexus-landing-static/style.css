@@ -92,9 +92,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI','H
 .nav-links{display:flex;gap:16px}
 .nav-link{font-size:12px;color:#64748b;cursor:pointer;padding:4px 0;border-bottom:2px solid transparent}
 .nav-link.active{color:#c7d2fe;border-bottom-color:#6366f1}
-.browser-content{display:grid;grid-template-columns:1.8fr 1fr;min-height:560px}
-.dash-left{border-right:1px solid rgba(99,102,241,.08);display:flex;flex-direction:column}
-.dash-right{display:flex;flex-direction:column}
+.browser-content{display:grid;grid-template-columns:1.8fr 1fr;height:620px;max-height:620px;overflow:hidden}
+.dash-left{border-right:1px solid rgba(99,102,241,.08);display:flex;flex-direction:column;overflow-y:auto;overflow-x:hidden;scrollbar-width:thin;scrollbar-color:rgba(99,102,241,.15) transparent}
+.dash-right{display:flex;flex-direction:column;height:100%;max-height:620px;overflow:hidden}
 .analysis-panel{padding:14px 16px;border-bottom:1px solid rgba(99,102,241,.08)}
 .ap-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px}
 .ap-ticker-row{display:flex;flex-direction:column;gap:4px}
@@ -138,7 +138,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI','H
 .chart-y-labels{position:absolute;right:4px;top:0;bottom:30px;display:flex;flex-direction:column;justify-content:space-between;pointer-events:none}
 .chart-y-labels span{font-size:9px;color:#475569}
 .chart-x-labels{display:flex;justify-content:space-between;padding:4px 8px 0;font-size:9px;color:#475569}
-.chat-panel{display:flex;flex-direction:column;height:100%}
+.chat-panel{display:flex;flex-direction:column;height:100%;overflow:hidden}
 .chat-header{padding:12px 16px;font-size:13px;font-weight:700;color:#c7d2fe;border-bottom:1px solid rgba(99,102,241,.08);display:flex;align-items:center;gap:8px}
 .chat-icon{color:#22c55e;font-size:8px;animation:chatPulse 2s ease-in-out infinite}
 @keyframes chatPulse{0%,100%{opacity:1}50%{opacity:.4}}
@@ -162,7 +162,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI','H
 .score-label{font-size:9px;color:#94a3b8;text-align:center;line-height:1.2}
 @media(max-width:768px){.browser-content{grid-template-columns:1fr}.dash-left{border-right:none;border-bottom:1px solid rgba(99,102,241,.08)}.browser-nav .nav-links{display:none}.nav-search{max-width:200px}}
 
-.chat-anim-container{position:relative;overflow-y:auto;overflow-x:hidden;height:480px;max-height:480px;padding:12px 14px;display:flex;flex-direction:column;gap:10px;scrollbar-width:thin;scrollbar-color:rgba(99,102,241,.2) transparent;scroll-behavior:smooth}
+.chat-anim-container{position:relative;overflow-y:auto;overflow-x:hidden;flex:1;min-height:0;padding:12px 14px;display:flex;flex-direction:column;gap:10px;scrollbar-width:thin;scrollbar-color:rgba(99,102,241,.2) transparent;scroll-behavior:smooth}
 .chat-scroll{display:flex;flex-direction:column;gap:10px;padding:12px 14px;height:100%;overflow:hidden}
 .chat-line{opacity:0;transform:translateY(12px);animation-fill-mode:forwards}
 .chat-typing{display:inline-flex;gap:3px;padding:6px 12px;background:rgba(30,41,59,.5);border:1px solid rgba(99,102,241,.08);border-radius:10px}
