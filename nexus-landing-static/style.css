@@ -175,19 +175,30 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI','H
 .chat-input-anim{display:flex;align-items:center;gap:8px;padding:10px 14px;border-top:1px solid rgba(99,102,241,.08);background:rgba(15,23,42,.3)}
 .type-cursor{display:inline-block;width:1px;height:13px;background:#a5b4fc;animation:blink 1s step-end infinite;vertical-align:middle;margin-left:1px}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
-.dcf-dl-btn{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;margin-top:8px;border-radius:6px;background:rgba(99,102,241,.15);border:1px solid rgba(99,102,241,.3);color:#a5b4fc;font-size:10px;font-weight:700;cursor:pointer;transition:all .3s ease;letter-spacing:.5px}
-.dcf-dl-btn:hover{background:rgba(99,102,241,.25)}
-.dcf-dl-btn .dl-icon{font-size:12px}
-.dcf-dl-btn.downloading{background:rgba(34,197,94,.15);border-color:rgba(34,197,94,.3);color:#4ade80}
-.dcf-dl-btn .dl-progress{display:none;width:60px;height:4px;background:rgba(99,102,241,.1);border-radius:2px;overflow:hidden;margin-left:4px}
-.dcf-dl-btn.downloading .dl-progress{display:block}
-.dl-progress-bar{height:100%;width:0;background:linear-gradient(90deg,#6366f1,#22c55e);border-radius:2px;animation:dlFill 2s ease forwards}
+.dcf-sheet{background:rgba(15,23,42,.7);border:1px solid rgba(99,102,241,.15);border-radius:6px;overflow:hidden;margin-top:8px;font-size:10px}
+.dcf-sheet-bar{display:flex;align-items:center;gap:6px;padding:5px 10px;background:rgba(34,197,94,.08);border-bottom:1px solid rgba(34,197,94,.15)}
+.dcf-sheet-bar span{color:#4ade80;font-weight:700;font-size:9px;letter-spacing:.5px}
+.dcf-sheet table{width:100%;border-collapse:collapse}
+.dcf-sheet td,.dcf-sheet th{padding:4px 8px;border-bottom:1px solid rgba(99,102,241,.06);color:#94a3b8;font-size:9px;text-align:right}
+.dcf-sheet th{text-align:left;color:#64748b;font-weight:600;font-size:8px;text-transform:uppercase;letter-spacing:.5px}
+.dcf-sheet .dcf-editable{color:#a5b4fc;background:rgba(99,102,241,.08);border-radius:3px;padding:2px 4px;position:relative}
+.dcf-sheet .dcf-result{color:#4ade80;font-weight:800;font-size:11px}
+.dcf-sheet .dcf-highlight{animation:dcfFlash .6s ease}
+@keyframes dcfFlash{0%{background:rgba(34,197,94,.3)}100%{background:rgba(99,102,241,.08)}}
+.dcf-dl-btn-green{display:inline-flex;align-items:center;gap:6px;padding:7px 16px;margin-top:8px;border-radius:6px;background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.3);color:#4ade80;font-size:10px;font-weight:700;cursor:pointer;transition:all .3s ease;letter-spacing:.3px}
+.dcf-dl-btn-green:hover{background:rgba(34,197,94,.25)}
+.dcf-dl-btn-green.downloading{background:rgba(34,197,94,.2);border-color:rgba(34,197,94,.4)}
+.dcf-dl-btn-green .dl-progress{display:none;width:50px;height:4px;background:rgba(34,197,94,.1);border-radius:2px;overflow:hidden;margin-left:4px}
+.dcf-dl-btn-green.downloading .dl-progress{display:block}
+.dcf-dl-btn-green .dl-check{display:none}
+.dcf-dl-btn-green.done{background:rgba(34,197,94,.1);border-color:rgba(34,197,94,.2)}
+.dcf-dl-btn-green.done .dl-check{display:inline}
+.dcf-dl-btn-green.done .dl-icon{display:none}
+.dcf-dl-btn-green.done .dl-progress{display:none}
+.dcf-cursor{display:inline-block;width:2px;height:10px;background:#a5b4fc;animation:blink 1s step-end infinite;vertical-align:middle;margin-left:1px}
+
+.dl-progress-bar{height:100%;width:0;background:linear-gradient(90deg,#22c55e,#4ade80);border-radius:2px;animation:dlFill 2s ease forwards}
 @keyframes dlFill{0%{width:0}100%{width:100%}}
-.dcf-dl-btn .dl-check{display:none;color:#4ade80}
-.dcf-dl-btn.done .dl-check{display:inline}
-.dcf-dl-btn.done .dl-icon{display:none}
-.dcf-dl-btn.done .dl-progress{display:none}
-.dcf-dl-btn.done{background:rgba(34,197,94,.1);border-color:rgba(34,197,94,.2);color:#4ade80}
 .factor-pill{display:inline-block;font-size:9px;padding:2px 7px;border-radius:8px;font-weight:600;margin:1px 2px}
 .factor-pill.fp-pos{background:rgba(34,197,94,.1);color:#4ade80;border:1px solid rgba(34,197,94,.15)}
 .factor-pill.fp-neg{background:rgba(239,68,68,.1);color:#f87171;border:1px solid rgba(239,68,68,.15)}

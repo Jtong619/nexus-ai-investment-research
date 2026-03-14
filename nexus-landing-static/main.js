@@ -34,9 +34,8 @@ var chatInput=document.getElementById('chatInputText');
 var chatCursor=document.getElementById('chatCursor');
 if(chatBox){
 var convos=[
-{q:"Analyze NVDA for me",a:'<div class="ns-badge">Nexus Score: 87/100 <div class="ns-bar"><div class="ns-bar-fill" style="width:87%"></div></div></div><br><strong>Direction:</strong> BUY &nbsp;|&nbsp; <strong>Conviction:</strong> HIGH &nbsp;|&nbsp; <strong>Horizon:</strong> 6\u201312 Mo<br><br><strong>5-Factor Breakdown:</strong><br><span class="factor-pill fp-pos">Macro 82</span> <span class="factor-pill fp-pos">Fundamental 91</span> <span class="factor-pill fp-pos">Technical 85</span> <span class="factor-pill fp-neu">Event 78</span> <span class="factor-pill fp-pos">Quant 89</span><br><br><strong>Key Metrics:</strong><br>\u2022 TTM Revenue: $130.5B (+122% YoY)<br>\u2022 TTM FCF: $60.9B (46.7% margin)<br>\u2022 Gross Margin: 78.4%<br>\u2022 Fwd P/E: 38x<br><br><strong>Thesis:</strong> NVIDIA dominates AI accelerator infrastructure with 80%+ datacenter GPU market share. Revenue growth is structural, driven by hyperscaler capex and enterprise AI adoption. Margin expansion continues as software attach rates increase via CUDA ecosystem lock-in.<br><br><strong>DCF Fair Value: $152.80</strong> (+18.4% upside)<br><br><div class="dcf-dl-btn" id="dcfBtn1"><span class="dl-icon">\u2B07</span> Download Excel for DCF Modification <div class="dl-progress"><div class="dl-progress-bar"></div></div><span class="dl-check">\u2713 NVDA_DCF_Model.xlsx</span></div>'},
-{q:"What are the main risk factors?",a:'<strong>Risk Assessment \u2014 NVDA</strong><br><br><span class="factor-pill fp-neg">Elevated Valuation</span> <span class="factor-pill fp-neg">Export Controls</span> <span class="factor-pill fp-neg">Customer Concentration</span> <span class="factor-pill fp-pos">Strong Moat</span> <span class="factor-pill fp-pos">FCF Generation</span><br><br><strong>Bear Case:</strong><br>\u2022 Fwd P/E of 38x prices in 3+ years of exceptional growth<br>\u2022 US export controls limit China TAM by ~$5B annually<br>\u2022 Top 4 customers = 40% of datacenter revenue<br>\u2022 AMD MI300X gaining traction in inference workloads<br><br><strong>Bull Case:</strong><br>\u2022 CUDA moat makes switching costs prohibitive<br>\u2022 Sovereign AI creating new demand verticals<br>\u2022 Networking (Spectrum-X) adds $10B+ TAM<br>\u2022 Automotive + robotics optionality not priced in<br><br><strong>Net Assessment:</strong> Risks are real but manageable. Growth trajectory supports premium multiple. Recommend position sizing at 3\u20135% of portfolio.'},
-{q:"Compare to AMD and INTC",a:'<strong>Semiconductor Competitive Matrix</strong><br><br><table style="width:100%;font-size:10px;border-collapse:collapse;color:#94a3b8"><tr style="border-bottom:1px solid rgba(99,102,241,.15)"><td style="padding:3px 4px;color:#64748b">Ticker</td><td style="padding:3px 4px;text-align:center"><strong style="color:#4ade80">NVDA</strong></td><td style="padding:3px 4px;text-align:center"><strong style="color:#fbbf24">AMD</strong></td><td style="padding:3px 4px;text-align:center"><strong style="color:#f87171">INTC</strong></td></tr><tr style="border-bottom:1px solid rgba(99,102,241,.08)"><td style="padding:3px 4px;color:#64748b">Nexus Score</td><td style="padding:3px 4px;text-align:center;color:#4ade80">87</td><td style="padding:3px 4px;text-align:center;color:#fbbf24">71</td><td style="padding:3px 4px;text-align:center;color:#f87171">42</td></tr><tr style="border-bottom:1px solid rgba(99,102,241,.08)"><td style="padding:3px 4px;color:#64748b">Direction</td><td style="padding:3px 4px;text-align:center;color:#4ade80">BUY</td><td style="padding:3px 4px;text-align:center;color:#fbbf24">HOLD</td><td style="padding:3px 4px;text-align:center;color:#f87171">SELL</td></tr><tr style="border-bottom:1px solid rgba(99,102,241,.08)"><td style="padding:3px 4px;color:#64748b">DCF Upside</td><td style="padding:3px 4px;text-align:center">+18.4%</td><td style="padding:3px 4px;text-align:center">+6.2%</td><td style="padding:3px 4px;text-align:center;color:#f87171">-12.1%</td></tr><tr><td style="padding:3px 4px;color:#64748b">FCF Margin</td><td style="padding:3px 4px;text-align:center">46.7%</td><td style="padding:3px 4px;text-align:center">14.2%</td><td style="padding:3px 4px;text-align:center;color:#f87171">-3.8%</td></tr></table><br>NVDA maintains structural dominance. AMD is a credible #2 but lacks CUDA ecosystem depth. Intel\u2019s foundry pivot carries high execution risk with negative FCF.'}
+{q:"Analyze NVDA for me",a:'<strong>NVDA Factor/Style Positioning</strong><br><br><span class="factor-pill fp-pos">Strong Datacenter Demand</span> <span class="factor-pill fp-pos">Earnings Visibility</span> <span class="factor-pill fp-pos">Margin Expansion</span> <span class="factor-pill fp-neg">Elevated Valuation</span> <span class="factor-pill fp-pos">FCF Growth</span> <span class="factor-pill fp-neg">Export Controls</span><br><br><div class="ns-badge">Nexus Score: 87/100 <div class="ns-bar"><div class="ns-bar-fill" style="width:87%"></div></div></div><br><strong>Direction:</strong> BUY &nbsp;|&nbsp; <strong>Conviction:</strong> HIGH &nbsp;|&nbsp; <strong>Horizon:</strong> 6\u201312 Mo<br><br><strong>5-Factor Breakdown:</strong><br><span class="factor-pill fp-pos">Macro 82</span> <span class="factor-pill fp-pos">Fundamental 91</span> <span class="factor-pill fp-pos">Technical 85</span> <span class="factor-pill fp-neu">Event 78</span> <span class="factor-pill fp-pos">Quant 89</span><br><br><strong>Key Metrics:</strong><br>\u2022 TTM Revenue: $130.5B (+122% YoY)<br>\u2022 TTM FCF: $60.9B (46.7% margin)<br>\u2022 Gross Margin: 78.4%<br>\u2022 Fwd P/E: 38x<br><br><strong>Thesis:</strong> NVIDIA dominates AI accelerator infrastructure with 80%+ datacenter GPU market share. Revenue growth is structural, driven by hyperscaler capex and enterprise AI adoption. Margin expansion continues as software attach rates increase via CUDA ecosystem lock-in.'},
+{q:"Show me the DCF model",a:'<strong>Discounted Cash Flow Analysis \u2014 NVDA</strong><br><br><div class="dcf-sheet"><div class="dcf-sheet-bar"><span>\u2630 NVDA_DCF_Model.xlsx</span></div><table><tr><th>Assumption</th><th>Value</th></tr><tr><td>Revenue Growth (Y1)</td><td class="dcf-editable" id="dcfRg">55.0%</td></tr><tr><td>Revenue Growth (Y2\u20135)</td><td class="dcf-editable" id="dcfRg2">28.0%</td></tr><tr><td>Terminal Growth</td><td class="dcf-editable" id="dcfTg">3.5%</td></tr><tr><td>WACC</td><td class="dcf-editable" id="dcfWacc">10.2%</td></tr><tr><td>FCF Margin (Stable)</td><td class="dcf-editable" id="dcfFcf">42.0%</td></tr><tr style="border-top:2px solid rgba(34,197,94,.2)"><td style="color:#4ade80;font-weight:700">DCF Fair Value</td><td class="dcf-result" id="dcfResult">$152.80</td></tr><tr><td style="color:#64748b">Upside from Current</td><td style="color:#4ade80;font-weight:700" id="dcfUpside">+18.4%</td></tr></table></div><br><div class="dcf-dl-btn-green" id="dcfBtn1"><span class="dl-icon">\u2B07</span> Download Excel for DCF Modification <div class="dl-progress"><div class="dl-progress-bar"></div></div><span class="dl-check">\u2713 NVDA_DCF_Model.xlsx saved</span></div>'}
 ];
 var avU='<div class="chat-avatar chat-av-u">You</div>';
 var avA='<div class="chat-avatar chat-av-a"><svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M12 2L21 7v10l-9 5-9-5V7l9-5z" stroke="#6366f1" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="#6366f1" opacity=".7"/></svg></div>';
@@ -44,13 +43,48 @@ function typeText(el,text,cb){var i=0;chatCursor.style.display='inline-block';fu
 function scrollChat(){setTimeout(function(){chatBox.scrollTop=chatBox.scrollHeight},50)}
 function addMsg(cls,avatar,html){var d=document.createElement('div');d.className='chat-msg '+cls;d.innerHTML=avatar+'<div class="chat-bubble '+(cls==='chat-user'?'chat-bub-u':'chat-bub-a')+'">'+(cls==='chat-ai'?'<div class="chat-ai-label">Nexus AI</div>':'')+html+'</div>';d.style.animation='chatFadeIn .4s ease forwards';chatBox.appendChild(d);scrollChat();return d}
 function addDots(){var d=document.createElement('div');d.className='chat-msg chat-ai';d.innerHTML=avA+'<div class="chat-typing"><span></span><span></span><span></span></div>';d.style.animation='chatFadeIn .3s ease forwards';chatBox.appendChild(d);scrollChat();return d}
-function animDcfBtn(){var btn=document.getElementById('dcfBtn1');if(!btn)return;setTimeout(function(){btn.classList.add('downloading');setTimeout(function(){btn.classList.remove('downloading');btn.classList.add('done')},2200)},800)}
+function animDcfDownloadAndEdit(){
+var btn=document.getElementById('dcfBtn1');if(!btn)return;
+setTimeout(function(){
+btn.classList.add('downloading');
+setTimeout(function(){
+btn.classList.remove('downloading');btn.classList.add('done');
+setTimeout(function(){
+var edits=[
+{id:'dcfRg',val:'62.0%',result:'$168.50',upside:'+30.6%'},
+{id:'dcfFcf',val:'45.0%',result:'$178.20',upside:'+38.1%'},
+{id:'dcfWacc',val:'9.5%',result:'$195.40',upside:'+51.4%'},
+{id:'dcfTg',val:'4.0%',result:'$204.60',upside:'+58.5%'}
+];
+var ei=0;
+function editNext(){
+if(ei>=edits.length){scrollChat();return}
+var e=edits[ei];ei++;
+var cell=document.getElementById(e.id);
+var res=document.getElementById('dcfResult');
+var ups=document.getElementById('dcfUpside');
+if(!cell){editNext();return}
+cell.innerHTML='<span class="dcf-cursor"></span>';
+setTimeout(function(){
+cell.textContent=e.val;
+cell.classList.add('dcf-highlight');
+if(res)res.textContent=e.result;
+if(ups)ups.textContent=e.upside;
+scrollChat();
+setTimeout(function(){cell.classList.remove('dcf-highlight');setTimeout(editNext,600)},800);
+},500);
+}
+editNext();
+},1200);
+},2000);
+},800);
+}
 var ci=0;
 function runConvo(){if(!chatBox)return;var c=convos[ci%convos.length];ci++;
 typeText(chatInput,c.q,function(){chatInput.textContent='';addMsg('chat-user',avU,c.q);
-var dots=addDots();setTimeout(function(){if(chatBox.contains(dots))chatBox.removeChild(dots);var msg=addMsg('chat-ai',avA,c.a);
-if(ci===1)animDcfBtn();
-setTimeout(function(){if(ci<convos.length){runConvo()}else{setTimeout(function(){chatBox.innerHTML='';ci=0;chatInput.textContent='Ask about any S&P 500 ticker...';setTimeout(runConvo,1500)},4000)}},2500)},1500)})}
+var dots=addDots();setTimeout(function(){if(chatBox.contains(dots))chatBox.removeChild(dots);addMsg('chat-ai',avA,c.a);
+if(ci===2)animDcfDownloadAndEdit();
+setTimeout(function(){if(ci<convos.length){runConvo()}else{setTimeout(function(){chatBox.innerHTML='';ci=0;chatInput.textContent='Ask about any S&P 500 ticker...';setTimeout(runConvo,2000)},8000)}},ci===2?12000:3000)},1500)})}
 chatInput.textContent='Ask about any S&P 500 ticker...';
 setTimeout(runConvo,2000);
 }
