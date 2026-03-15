@@ -148,6 +148,8 @@ ghost=item.cloneNode(true);
 ghost.style.opacity='.7';
 ghost.style.pointerEvents='none';
 svg.appendChild(ghost);
+document.body.style.overflow='hidden';
+svg.style.touchAction='none';
 }
 
 function onMove(e){
@@ -174,6 +176,8 @@ function onEnd(e){
 if(!dragging)return;
 dragging=false;item.classList.remove('dragging');
 if(ghost&&ghost.parentNode)ghost.parentNode.removeChild(ghost);
+document.body.style.overflow='';
+svg.style.touchAction='';
 var page=item.dataset.page;
 var target=document.getElementById(page+'KbIcon');
 if(!target)return;
@@ -218,6 +222,8 @@ document.addEventListener('touchcancel',function(){
 if(!dragging)return;
 dragging=false;item.classList.remove('dragging');
 if(ghost&&ghost.parentNode)ghost.parentNode.removeChild(ghost);
+document.body.style.overflow='';
+svg.style.touchAction='';
 var page=item.dataset.page;
 var target=document.getElementById(page+'KbIcon');
 if(target)target.parentElement.classList.remove('highlight');

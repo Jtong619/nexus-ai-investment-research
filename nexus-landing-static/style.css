@@ -255,7 +255,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI','H
 .flow-glow{animation:pulseGlow 2s ease-in-out infinite}
 .arc-seg{opacity:0;transition:opacity 1s ease}
 .arc-seg.revealed{opacity:1}
-.kb-drag-item{cursor:grab;transition:opacity .3s ease}
+.kb-drag-item{cursor:grab;transition:opacity .3s ease;touch-action:none}
 .kb-drag-item:hover{opacity:.85}
 .kb-drag-item.dragging{opacity:.5}
 .highlight{filter:drop-shadow(0 0 12px rgba(99,102,241,.8));transition:filter .3s ease}
