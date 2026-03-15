@@ -255,6 +255,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI','H
 .flow-glow{animation:pulseGlow 2s ease-in-out infinite}
 .arc-seg{opacity:0;transition:opacity 1s ease}
 .arc-seg.revealed{opacity:1}
+.kb-draggable{cursor:grab;transition:all .3s ease}
+.kb-draggable:hover{stroke-width:2.5;filter:drop-shadow(0 0 6px rgba(99,102,241,.4));transform:translateY(-2px)}
+
 
 @media(max-width:768px){.p-container{grid-template-columns:1fr;gap:40px}.col-visual{height:320px}}
 @media(max-width:640px){.counter-bar{gap:28px}.counter-divider{display:none}.logo-text{font-size:15px;letter-spacing:5px}}
