@@ -444,6 +444,237 @@
 </div>
 </div>
 </section>
+<div class="section-divider"></div>
+
+<!-- ========== PAGE 5: SELF-IMPROVING SYSTEM ========== -->
+<section class="flow-section">
+<div class="grid-bg"></div>
+<div class="flow-inner">
+<div class="flow-tag">Feedback Loop</div>
+<h2 class="flow-title">Self-Improving <span class="purple-accent">System</span></h2>
+<p class="flow-sub">Every analysis is audited. Issues are automatically fed back to improve data quality and future results.</p>
+<div class="flow-cta" id="flowCta5" style="font-size:clamp(18px,2.5vw,26px);font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:40px;cursor:pointer;background:linear-gradient(90deg,#818cf8,#a78bfa,#c084fc,#818cf8);background-size:300% 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:arcadeShift 3s linear infinite,arcadePulse 1.5s ease-in-out infinite">CLICK OR TAP TO EXPLORE MORE...</div>
+<div class="flow-chart" id="flowChart5">
+<svg viewBox="0 0 700 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<filter id="s5glowCyan" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur in="SourceGraphic" stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="s5glowMagenta" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur in="SourceGraphic" stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="s5trailCyan" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur in="SourceGraphic" stdDeviation="6"/></filter>
+<filter id="s5trailMagenta" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur in="SourceGraphic" stdDeviation="6"/></filter>
+<filter id="s5nodeScheduler"><feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#a78bfa" flood-opacity=".8"/></filter>
+<filter id="s5nodeAnalyst"><feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#22c55e" flood-opacity=".8"/></filter>
+<filter id="s5nodeAuditor"><feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#f59e0b" flood-opacity=".8"/></filter>
+<filter id="s5nodeData"><feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#818cf8" flood-opacity=".8"/></filter>
+</defs>
+
+<!-- ═══ ARC S1: Scheduler → Analyst (straight down-left) ═══ -->
+<g class="arc-seg" id="s5arc1">
+<line x1="310" y1="80" x2="145" y2="250" stroke="rgba(167,139,250,.15)" stroke-width="2" stroke-dasharray="6,4"/>
+<polygon points="145,250 155,238 139,240" fill="#a78bfa" opacity=".6"/>
+<text x="195" y="155" fill="#a78bfa" font-size="10" font-weight="600" font-family="system-ui" opacity=".8">Schedule</text>
+</g>
+
+<!-- ═══ ARC S2: Scheduler → Auditor (straight down) ═══ -->
+<g class="arc-seg" id="s5arc2">
+<line x1="350" y1="80" x2="350" y2="250" stroke="rgba(167,139,250,.15)" stroke-width="2" stroke-dasharray="6,4"/>
+<polygon points="350,250 344,238 356,238" fill="#a78bfa" opacity=".6"/>
+<text x="360" y="165" fill="#a78bfa" font-size="10" font-weight="600" font-family="system-ui" opacity=".8">Orchestrate</text>
+</g>
+
+<!-- ═══ ARC S3: Scheduler → Data Collector (straight down-right) ═══ -->
+<g class="arc-seg" id="s5arc3">
+<line x1="390" y1="80" x2="555" y2="250" stroke="rgba(167,139,250,.15)" stroke-width="2" stroke-dasharray="6,4"/>
+<polygon points="555,250 545,238 561,240" fill="#a78bfa" opacity=".6"/>
+<text x="485" y="155" fill="#a78bfa" font-size="10" font-weight="600" font-family="system-ui" opacity=".8">Schedule</text>
+</g>
+
+<!-- ═══ ARC S4: Auditor → Analyst loop (top arc, left-going) ═══ -->
+<g class="arc-seg" id="s5arc4">
+<path id="s5arc4p" d="M310,280 A130,100 0 0,0 175,280" fill="none" stroke="none"/>
+<path d="M310,280 A130,100 0 0,0 175,280" fill="none" stroke="rgba(30,70,80,.35)" stroke-width="5" stroke-linecap="round"/>
+<path d="M310,280 A130,100 0 0,0 175,280" fill="none" stroke="rgba(0,229,255,.06)" stroke-width="1.2"/>
+<circle r="4.5" fill="#00e5ff" opacity=".2" filter="url(#s5trailCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="0.0s"><mpath href="#s5arc4p"/></animateMotion></circle>
+<circle r="4.5" fill="#00e5ff" opacity=".2" filter="url(#s5trailCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="0.36s"><mpath href="#s5arc4p"/></animateMotion></circle>
+<circle r="4.5" fill="#00e5ff" opacity=".2" filter="url(#s5trailCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="0.71s"><mpath href="#s5arc4p"/></animateMotion></circle>
+<circle r="4.5" fill="#00e5ff" opacity=".2" filter="url(#s5trailCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="1.07s"><mpath href="#s5arc4p"/></animateMotion></circle>
+<circle r="4.5" fill="#00e5ff" opacity=".2" filter="url(#s5trailCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="1.43s"><mpath href="#s5arc4p"/></animateMotion></circle>
+<circle r="4.5" fill="#00e5ff" opacity=".2" filter="url(#s5trailCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="1.79s"><mpath href="#s5arc4p"/></animateMotion></circle>
+<circle r="4.5" fill="#00e5ff" opacity=".2" filter="url(#s5trailCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="2.14s"><mpath href="#s5arc4p"/></animateMotion></circle>
+<circle r="4.5" fill="#00e5ff" opacity=".2" filter="url(#s5trailCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="2.5s"><mpath href="#s5arc4p"/></animateMotion></circle>
+<circle r="4.5" fill="#00e5ff" opacity=".2" filter="url(#s5trailCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="2.86s"><mpath href="#s5arc4p"/></animateMotion></circle>
+<circle r="4.5" fill="#00e5ff" opacity=".2" filter="url(#s5trailCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="3.21s"><mpath href="#s5arc4p"/></animateMotion></circle>
+<circle r="4.5" fill="#00e5ff" opacity=".2" filter="url(#s5trailCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="3.57s"><mpath href="#s5arc4p"/></animateMotion></circle>
+<circle r="4.5" fill="#00e5ff" opacity=".2" filter="url(#s5trailCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="3.93s"><mpath href="#s5arc4p"/></animateMotion></circle>
+<circle r="4.5" fill="#00e5ff" opacity=".2" filter="url(#s5trailCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="4.29s"><mpath href="#s5arc4p"/></animateMotion></circle>
+<circle r="4.5" fill="#00e5ff" opacity=".2" filter="url(#s5trailCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="4.64s"><mpath href="#s5arc4p"/></animateMotion></circle>
+<circle r="3.5" fill="#00e5ff" opacity=".95" filter="url(#s5glowCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="0.0s"><mpath href="#s5arc4p"/></animateMotion></circle>
+<circle r="3.5" fill="#00e5ff" opacity=".95" filter="url(#s5glowCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="0.36s"><mpath href="#s5arc4p"/></animateMotion></circle>
+<circle r="3.5" fill="#00e5ff" opacity=".95" filter="url(#s5glowCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="0.71s"><mpath href="#s5arc4p"/></animateMotion></circle>
+<circle r="3.5" fill="#00e5ff" opacity=".95" filter="url(#s5glowCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="1.07s"><mpath href="#s5arc4p"/></animateMotion></circle>
+<circle r="3.5" fill="#00e5ff" opacity=".95" filter="url(#s5glowCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="1.43s"><mpath href="#s5arc4p"/></animateMotion></circle>
+<circle r="3.5" fill="#00e5ff" opacity=".95" filter="url(#s5glowCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="1.79s"><mpath href="#s5arc4p"/></animateMotion></circle>
+<circle r="3.5" fill="#00e5ff" opacity=".95" filter="url(#s5glowCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="2.14s"><mpath href="#s5arc4p"/></animateMotion></circle>
+<circle r="3.5" fill="#00e5ff" opacity=".95" filter="url(#s5glowCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="2.5s"><mpath href="#s5arc4p"/></animateMotion></circle>
+<circle r="3.5" fill="#00e5ff" opacity=".95" filter="url(#s5glowCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="2.86s"><mpath href="#s5arc4p"/></animateMotion></circle>
+<circle r="3.5" fill="#00e5ff" opacity=".95" filter="url(#s5glowCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="3.21s"><mpath href="#s5arc4p"/></animateMotion></circle>
+<circle r="3.5" fill="#00e5ff" opacity=".95" filter="url(#s5glowCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="3.57s"><mpath href="#s5arc4p"/></animateMotion></circle>
+<circle r="3.5" fill="#00e5ff" opacity=".95" filter="url(#s5glowCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="3.93s"><mpath href="#s5arc4p"/></animateMotion></circle>
+<circle r="3.5" fill="#00e5ff" opacity=".95" filter="url(#s5glowCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="4.29s"><mpath href="#s5arc4p"/></animateMotion></circle>
+<circle r="3.5" fill="#00e5ff" opacity=".95" filter="url(#s5glowCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="4.64s"><mpath href="#s5arc4p"/></animateMotion></circle>
+<text x="225" y="195" fill="#00e5ff" font-size="10" font-weight="700" font-family="system-ui" filter="url(#s5glowCyan)">Audit findings</text>
+</g>
+
+<!-- ═══ ARC S5: Analyst → Auditor loop (bottom arc, right-going) ═══ -->
+<g class="arc-seg" id="s5arc5">
+<path id="s5arc5p" d="M175,330 A130,100 0 0,0 310,330" fill="none" stroke="none"/>
+<path d="M175,330 A130,100 0 0,0 310,330" fill="none" stroke="rgba(30,70,80,.35)" stroke-width="5" stroke-linecap="round"/>
+<path d="M175,330 A130,100 0 0,0 310,330" fill="none" stroke="rgba(0,229,255,.06)" stroke-width="1.2"/>
+<circle r="4.5" fill="#00e5ff" opacity=".2" filter="url(#s5trailCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="0.0s"><mpath href="#s5arc5p"/></animateMotion></circle>
+<circle r="4.5" fill="#00e5ff" opacity=".2" filter="url(#s5trailCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="0.36s"><mpath href="#s5arc5p"/></animateMotion></circle>
+<circle r="4.5" fill="#00e5ff" opacity=".2" filter="url(#s5trailCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="0.71s"><mpath href="#s5arc5p"/></animateMotion></circle>
+<circle r="4.5" fill="#00e5ff" opacity=".2" filter="url(#s5trailCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="1.07s"><mpath href="#s5arc5p"/></animateMotion></circle>
+<circle r="4.5" fill="#00e5ff" opacity=".2" filter="url(#s5trailCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="1.43s"><mpath href="#s5arc5p"/></animateMotion></circle>
+<circle r="4.5" fill="#00e5ff" opacity=".2" filter="url(#s5trailCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="1.79s"><mpath href="#s5arc5p"/></animateMotion></circle>
+<circle r="4.5" fill="#00e5ff" opacity=".2" filter="url(#s5trailCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="2.14s"><mpath href="#s5arc5p"/></animateMotion></circle>
+<circle r="4.5" fill="#00e5ff" opacity=".2" filter="url(#s5trailCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="2.5s"><mpath href="#s5arc5p"/></animateMotion></circle>
+<circle r="4.5" fill="#00e5ff" opacity=".2" filter="url(#s5trailCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="2.86s"><mpath href="#s5arc5p"/></animateMotion></circle>
+<circle r="4.5" fill="#00e5ff" opacity=".2" filter="url(#s5trailCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="3.21s"><mpath href="#s5arc5p"/></animateMotion></circle>
+<circle r="4.5" fill="#00e5ff" opacity=".2" filter="url(#s5trailCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="3.57s"><mpath href="#s5arc5p"/></animateMotion></circle>
+<circle r="4.5" fill="#00e5ff" opacity=".2" filter="url(#s5trailCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="3.93s"><mpath href="#s5arc5p"/></animateMotion></circle>
+<circle r="4.5" fill="#00e5ff" opacity=".2" filter="url(#s5trailCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="4.29s"><mpath href="#s5arc5p"/></animateMotion></circle>
+<circle r="4.5" fill="#00e5ff" opacity=".2" filter="url(#s5trailCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="4.64s"><mpath href="#s5arc5p"/></animateMotion></circle>
+<circle r="3.5" fill="#00e5ff" opacity=".95" filter="url(#s5glowCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="0.0s"><mpath href="#s5arc5p"/></animateMotion></circle>
+<circle r="3.5" fill="#00e5ff" opacity=".95" filter="url(#s5glowCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="0.36s"><mpath href="#s5arc5p"/></animateMotion></circle>
+<circle r="3.5" fill="#00e5ff" opacity=".95" filter="url(#s5glowCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="0.71s"><mpath href="#s5arc5p"/></animateMotion></circle>
+<circle r="3.5" fill="#00e5ff" opacity=".95" filter="url(#s5glowCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="1.07s"><mpath href="#s5arc5p"/></animateMotion></circle>
+<circle r="3.5" fill="#00e5ff" opacity=".95" filter="url(#s5glowCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="1.43s"><mpath href="#s5arc5p"/></animateMotion></circle>
+<circle r="3.5" fill="#00e5ff" opacity=".95" filter="url(#s5glowCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="1.79s"><mpath href="#s5arc5p"/></animateMotion></circle>
+<circle r="3.5" fill="#00e5ff" opacity=".95" filter="url(#s5glowCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="2.14s"><mpath href="#s5arc5p"/></animateMotion></circle>
+<circle r="3.5" fill="#00e5ff" opacity=".95" filter="url(#s5glowCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="2.5s"><mpath href="#s5arc5p"/></animateMotion></circle>
+<circle r="3.5" fill="#00e5ff" opacity=".95" filter="url(#s5glowCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="2.86s"><mpath href="#s5arc5p"/></animateMotion></circle>
+<circle r="3.5" fill="#00e5ff" opacity=".95" filter="url(#s5glowCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="3.21s"><mpath href="#s5arc5p"/></animateMotion></circle>
+<circle r="3.5" fill="#00e5ff" opacity=".95" filter="url(#s5glowCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="3.57s"><mpath href="#s5arc5p"/></animateMotion></circle>
+<circle r="3.5" fill="#00e5ff" opacity=".95" filter="url(#s5glowCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="3.93s"><mpath href="#s5arc5p"/></animateMotion></circle>
+<circle r="3.5" fill="#00e5ff" opacity=".95" filter="url(#s5glowCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="4.29s"><mpath href="#s5arc5p"/></animateMotion></circle>
+<circle r="3.5" fill="#00e5ff" opacity=".95" filter="url(#s5glowCyan)"><animateMotion dur="5s" repeatCount="indefinite" begin="4.64s"><mpath href="#s5arc5p"/></animateMotion></circle>
+<text x="210" y="415" fill="#00e5ff" font-size="10" font-weight="700" font-family="system-ui" filter="url(#s5glowCyan)">Improved analysis</text>
+</g>
+
+<!-- ═══ ARC S6: Auditor → Data Collector loop (top arc, right-going) ═══ -->
+<g class="arc-seg" id="s5arc6">
+<path id="s5arc6p" d="M395,280 A130,100 0 0,1 530,280" fill="none" stroke="none"/>
+<path d="M395,280 A130,100 0 0,1 530,280" fill="none" stroke="rgba(50,30,70,.35)" stroke-width="5" stroke-linecap="round"/>
+<path d="M395,280 A130,100 0 0,1 530,280" fill="none" stroke="rgba(224,64,251,.06)" stroke-width="1.2"/>
+<circle r="4.5" fill="#e040fb" opacity=".2" filter="url(#s5trailMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="0.0s"><mpath href="#s5arc6p"/></animateMotion></circle>
+<circle r="4.5" fill="#e040fb" opacity=".2" filter="url(#s5trailMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="0.36s"><mpath href="#s5arc6p"/></animateMotion></circle>
+<circle r="4.5" fill="#e040fb" opacity=".2" filter="url(#s5trailMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="0.71s"><mpath href="#s5arc6p"/></animateMotion></circle>
+<circle r="4.5" fill="#e040fb" opacity=".2" filter="url(#s5trailMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="1.07s"><mpath href="#s5arc6p"/></animateMotion></circle>
+<circle r="4.5" fill="#e040fb" opacity=".2" filter="url(#s5trailMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="1.43s"><mpath href="#s5arc6p"/></animateMotion></circle>
+<circle r="4.5" fill="#e040fb" opacity=".2" filter="url(#s5trailMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="1.79s"><mpath href="#s5arc6p"/></animateMotion></circle>
+<circle r="4.5" fill="#e040fb" opacity=".2" filter="url(#s5trailMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="2.14s"><mpath href="#s5arc6p"/></animateMotion></circle>
+<circle r="4.5" fill="#e040fb" opacity=".2" filter="url(#s5trailMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="2.5s"><mpath href="#s5arc6p"/></animateMotion></circle>
+<circle r="4.5" fill="#e040fb" opacity=".2" filter="url(#s5trailMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="2.86s"><mpath href="#s5arc6p"/></animateMotion></circle>
+<circle r="4.5" fill="#e040fb" opacity=".2" filter="url(#s5trailMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="3.21s"><mpath href="#s5arc6p"/></animateMotion></circle>
+<circle r="4.5" fill="#e040fb" opacity=".2" filter="url(#s5trailMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="3.57s"><mpath href="#s5arc6p"/></animateMotion></circle>
+<circle r="4.5" fill="#e040fb" opacity=".2" filter="url(#s5trailMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="3.93s"><mpath href="#s5arc6p"/></animateMotion></circle>
+<circle r="4.5" fill="#e040fb" opacity=".2" filter="url(#s5trailMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="4.29s"><mpath href="#s5arc6p"/></animateMotion></circle>
+<circle r="4.5" fill="#e040fb" opacity=".2" filter="url(#s5trailMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="4.64s"><mpath href="#s5arc6p"/></animateMotion></circle>
+<circle r="3.5" fill="#e040fb" opacity=".95" filter="url(#s5glowMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="0.0s"><mpath href="#s5arc6p"/></animateMotion></circle>
+<circle r="3.5" fill="#e040fb" opacity=".95" filter="url(#s5glowMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="0.36s"><mpath href="#s5arc6p"/></animateMotion></circle>
+<circle r="3.5" fill="#e040fb" opacity=".95" filter="url(#s5glowMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="0.71s"><mpath href="#s5arc6p"/></animateMotion></circle>
+<circle r="3.5" fill="#e040fb" opacity=".95" filter="url(#s5glowMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="1.07s"><mpath href="#s5arc6p"/></animateMotion></circle>
+<circle r="3.5" fill="#e040fb" opacity=".95" filter="url(#s5glowMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="1.43s"><mpath href="#s5arc6p"/></animateMotion></circle>
+<circle r="3.5" fill="#e040fb" opacity=".95" filter="url(#s5glowMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="1.79s"><mpath href="#s5arc6p"/></animateMotion></circle>
+<circle r="3.5" fill="#e040fb" opacity=".95" filter="url(#s5glowMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="2.14s"><mpath href="#s5arc6p"/></animateMotion></circle>
+<circle r="3.5" fill="#e040fb" opacity=".95" filter="url(#s5glowMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="2.5s"><mpath href="#s5arc6p"/></animateMotion></circle>
+<circle r="3.5" fill="#e040fb" opacity=".95" filter="url(#s5glowMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="2.86s"><mpath href="#s5arc6p"/></animateMotion></circle>
+<circle r="3.5" fill="#e040fb" opacity=".95" filter="url(#s5glowMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="3.21s"><mpath href="#s5arc6p"/></animateMotion></circle>
+<circle r="3.5" fill="#e040fb" opacity=".95" filter="url(#s5glowMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="3.57s"><mpath href="#s5arc6p"/></animateMotion></circle>
+<circle r="3.5" fill="#e040fb" opacity=".95" filter="url(#s5glowMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="3.93s"><mpath href="#s5arc6p"/></animateMotion></circle>
+<circle r="3.5" fill="#e040fb" opacity=".95" filter="url(#s5glowMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="4.29s"><mpath href="#s5arc6p"/></animateMotion></circle>
+<circle r="3.5" fill="#e040fb" opacity=".95" filter="url(#s5glowMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="4.64s"><mpath href="#s5arc6p"/></animateMotion></circle>
+<text x="430" y="195" fill="#e879f9" font-size="10" font-weight="700" font-family="system-ui" filter="url(#s5glowMagenta)">Quality flags</text>
+</g>
+
+<!-- ═══ ARC S7: Data Collector → Auditor loop (bottom arc, left-going) ═══ -->
+<g class="arc-seg" id="s5arc7">
+<path id="s5arc7p" d="M530,330 A130,100 0 0,1 395,330" fill="none" stroke="none"/>
+<path d="M530,330 A130,100 0 0,1 395,330" fill="none" stroke="rgba(50,30,70,.35)" stroke-width="5" stroke-linecap="round"/>
+<path d="M530,330 A130,100 0 0,1 395,330" fill="none" stroke="rgba(224,64,251,.06)" stroke-width="1.2"/>
+<circle r="4.5" fill="#e040fb" opacity=".2" filter="url(#s5trailMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="0.0s"><mpath href="#s5arc7p"/></animateMotion></circle>
+<circle r="4.5" fill="#e040fb" opacity=".2" filter="url(#s5trailMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="0.36s"><mpath href="#s5arc7p"/></animateMotion></circle>
+<circle r="4.5" fill="#e040fb" opacity=".2" filter="url(#s5trailMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="0.71s"><mpath href="#s5arc7p"/></animateMotion></circle>
+<circle r="4.5" fill="#e040fb" opacity=".2" filter="url(#s5trailMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="1.07s"><mpath href="#s5arc7p"/></animateMotion></circle>
+<circle r="4.5" fill="#e040fb" opacity=".2" filter="url(#s5trailMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="1.43s"><mpath href="#s5arc7p"/></animateMotion></circle>
+<circle r="4.5" fill="#e040fb" opacity=".2" filter="url(#s5trailMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="1.79s"><mpath href="#s5arc7p"/></animateMotion></circle>
+<circle r="4.5" fill="#e040fb" opacity=".2" filter="url(#s5trailMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="2.14s"><mpath href="#s5arc7p"/></animateMotion></circle>
+<circle r="4.5" fill="#e040fb" opacity=".2" filter="url(#s5trailMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="2.5s"><mpath href="#s5arc7p"/></animateMotion></circle>
+<circle r="4.5" fill="#e040fb" opacity=".2" filter="url(#s5trailMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="2.86s"><mpath href="#s5arc7p"/></animateMotion></circle>
+<circle r="4.5" fill="#e040fb" opacity=".2" filter="url(#s5trailMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="3.21s"><mpath href="#s5arc7p"/></animateMotion></circle>
+<circle r="4.5" fill="#e040fb" opacity=".2" filter="url(#s5trailMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="3.57s"><mpath href="#s5arc7p"/></animateMotion></circle>
+<circle r="4.5" fill="#e040fb" opacity=".2" filter="url(#s5trailMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="3.93s"><mpath href="#s5arc7p"/></animateMotion></circle>
+<circle r="4.5" fill="#e040fb" opacity=".2" filter="url(#s5trailMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="4.29s"><mpath href="#s5arc7p"/></animateMotion></circle>
+<circle r="4.5" fill="#e040fb" opacity=".2" filter="url(#s5trailMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="4.64s"><mpath href="#s5arc7p"/></animateMotion></circle>
+<circle r="3.5" fill="#e040fb" opacity=".95" filter="url(#s5glowMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="0.0s"><mpath href="#s5arc7p"/></animateMotion></circle>
+<circle r="3.5" fill="#e040fb" opacity=".95" filter="url(#s5glowMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="0.36s"><mpath href="#s5arc7p"/></animateMotion></circle>
+<circle r="3.5" fill="#e040fb" opacity=".95" filter="url(#s5glowMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="0.71s"><mpath href="#s5arc7p"/></animateMotion></circle>
+<circle r="3.5" fill="#e040fb" opacity=".95" filter="url(#s5glowMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="1.07s"><mpath href="#s5arc7p"/></animateMotion></circle>
+<circle r="3.5" fill="#e040fb" opacity=".95" filter="url(#s5glowMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="1.43s"><mpath href="#s5arc7p"/></animateMotion></circle>
+<circle r="3.5" fill="#e040fb" opacity=".95" filter="url(#s5glowMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="1.79s"><mpath href="#s5arc7p"/></animateMotion></circle>
+<circle r="3.5" fill="#e040fb" opacity=".95" filter="url(#s5glowMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="2.14s"><mpath href="#s5arc7p"/></animateMotion></circle>
+<circle r="3.5" fill="#e040fb" opacity=".95" filter="url(#s5glowMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="2.5s"><mpath href="#s5arc7p"/></animateMotion></circle>
+<circle r="3.5" fill="#e040fb" opacity=".95" filter="url(#s5glowMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="2.86s"><mpath href="#s5arc7p"/></animateMotion></circle>
+<circle r="3.5" fill="#e040fb" opacity=".95" filter="url(#s5glowMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="3.21s"><mpath href="#s5arc7p"/></animateMotion></circle>
+<circle r="3.5" fill="#e040fb" opacity=".95" filter="url(#s5glowMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="3.57s"><mpath href="#s5arc7p"/></animateMotion></circle>
+<circle r="3.5" fill="#e040fb" opacity=".95" filter="url(#s5glowMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="3.93s"><mpath href="#s5arc7p"/></animateMotion></circle>
+<circle r="3.5" fill="#e040fb" opacity=".95" filter="url(#s5glowMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="4.29s"><mpath href="#s5arc7p"/></animateMotion></circle>
+<circle r="3.5" fill="#e040fb" opacity=".95" filter="url(#s5glowMagenta)"><animateMotion dur="5s" repeatCount="indefinite" begin="4.64s"><mpath href="#s5arc7p"/></animateMotion></circle>
+<text x="435" y="415" fill="#e879f9" font-size="10" font-weight="700" font-family="system-ui" filter="url(#s5glowMagenta)">Cleaner data</text>
+</g>
+
+<!-- ═══ NODE: Scheduler (top center) ═══ -->
+<g class="flow-node" style="transition-delay:.2s">
+<rect x="275" y="24" width="150" height="52" rx="14" fill="#0d0f1a" stroke="#a78bfa" stroke-width="2" filter="url(#s5nodeScheduler)"/>
+<text x="350" y="56" text-anchor="middle" fill="#c7d2fe" font-size="15" font-weight="700" font-family="system-ui">Scheduler</text>
+</g>
+
+<!-- ═══ NODE: Analyst (bottom-left) — green circle with Nexus Score ═══ -->
+<g class="flow-node" style="transition-delay:.4s">
+<circle cx="130" cy="300" r="75" fill="#0a1a12" stroke="#22c55e" stroke-width="2.5" filter="url(#s5nodeAnalyst)"/>
+<text x="130" y="290" text-anchor="middle" fill="#bbf7d0" font-size="16" font-weight="700" font-family="system-ui">Analyst</text>
+<rect x="97" y="306" width="66" height="20" rx="4" fill="rgba(34,197,94,.12)" stroke="rgba(34,197,94,.3)" stroke-width="1"/>
+<text x="130" y="320" text-anchor="middle" fill="#4ade80" font-size="9" font-weight="700" font-family="system-ui">Nexus Score</text>
+</g>
+
+<!-- ═══ NODE: Auditor (bottom-center) — yellow/amber with human oversight ═══ -->
+<g class="flow-node" style="transition-delay:.6s">
+<rect x="290" y="264" width="120" height="52" rx="14" fill="#1a150a" stroke="#f59e0b" stroke-width="2" filter="url(#s5nodeAuditor)"/>
+<text x="350" y="296" text-anchor="middle" fill="#fde68a" font-size="15" font-weight="700" font-family="system-ui">Auditor</text>
+<!-- Human Oversight icon + label -->
+<circle cx="350" cy="345" r="14" fill="#1a150a" stroke="rgba(245,158,11,.4)" stroke-width="1.5"/>
+<text x="350" y="350" text-anchor="middle" fill="#fbbf24" font-size="14" font-family="system-ui">&#128100;</text>
+<text x="350" y="375" text-anchor="middle" fill="#fde68a" font-size="8" font-weight="600" font-family="system-ui" opacity=".8">Human Oversight</text>
+</g>
+
+<!-- ═══ NODE: Data Collector (bottom-right) — blue rect with Knowledge Base ═══ -->
+<g class="flow-node" style="transition-delay:.8s">
+<rect x="470" y="264" width="192" height="52" rx="14" fill="#0d0f1a" stroke="#818cf8" stroke-width="2" filter="url(#s5nodeData)"/>
+<text x="566" y="287" text-anchor="middle" fill="#c7d2fe" font-size="14" font-weight="700" font-family="system-ui">Data Collector</text>
+<text x="566" y="304" text-anchor="middle" fill="#64748b" font-size="8" font-family="system-ui">FMP API &bull; 507 tickers</text>
+<rect x="470" y="324" width="192" height="48" rx="12" fill="#0d0f1a" stroke="rgba(129,140,248,.35)" stroke-width="2"/>
+<text x="502" y="354" fill="#818cf8" font-size="24" font-family="system-ui">&#128218;</text>
+<text x="536" y="347" fill="#a5b4fc" font-size="11" font-weight="800" font-family="system-ui">Knowledge</text>
+<text x="536" y="363" fill="#818cf8" font-size="11" font-weight="800" font-family="system-ui">Base</text>
+</g>
+
+<!-- Step counter -->
+<g class="flow-node" style="transition-delay:1s">
+<text x="350" y="530" text-anchor="middle" fill="#475569" font-size="11" font-family="system-ui" letter-spacing="1" id="stepCounter5">Tap to reveal the feedback loops</text>
+</g>
+</svg>
+</div>
+</div>
+</section>
 
 <script src="main.js"></script>
 </body>

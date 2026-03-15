@@ -23,6 +23,19 @@ if(sc){if(flowStep<flowMax){sc.textContent='Step '+flowStep+' / '+flowMax+' \u20
 if(fc)fc.addEventListener('click',advanceFlow);
 if(flowCta)flowCta.addEventListener('click',advanceFlow)
 
+var flowStep5=0;var flowMax5=7;
+var fc5=document.getElementById('flowChart5');
+var sc5=document.getElementById('stepCounter5');
+var flowCta5=document.getElementById('flowCta5');
+function advanceFlow5(){flowStep5++;if(flowStep5>flowMax5)return;
+var a=document.getElementById('s5arc'+flowStep5);if(a)a.classList.add('revealed');
+if(sc5){if(flowStep5<flowMax5){sc5.textContent='Step '+flowStep5+' / '+flowMax5+' \u2014 tap for next'}else{sc5.textContent='Feedback loops revealed \u2713';if(flowCta5)flowCta5.style.display='none'}}}
+if(fc5)fc5.addEventListener('click',advanceFlow5);
+if(flowCta5)flowCta5.addEventListener('click',advanceFlow5)
+
+var fObs5=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){var nodes=e.target.querySelectorAll('.flow-node');nodes.forEach(function(n,i){setTimeout(function(){n.classList.add('visible')},i*200)});fObs5.unobserve(e.target)}})},{threshold:.15});
+document.querySelectorAll('#flowChart5').forEach(function(el){fObs5.observe(el)})
+
 var painObs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){var items=e.target.querySelectorAll('.pain-item');items.forEach(function(item,i){setTimeout(function(){item.classList.add('visible')},i*200)});painObs.unobserve(e.target)}})},{threshold:.3});
 document.querySelectorAll('.pain-list').forEach(function(el){painObs.observe(el)});
 
