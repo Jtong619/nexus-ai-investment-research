@@ -55,10 +55,10 @@ setTimeout(function(){
 if(overlay)overlay.classList.add('active');
 setTimeout(function(){
 var edits=[
-{id:'xlRg1',val:'62.0%',cell:'C4',rev1:'$209.8B',rev2:'$268.5B',fcf1:'$88.1B',fcf2:'$112.8B',tv:'$3,425.1B',ev:'$3,956.8B',result:'$161.60',upside:'+25.2%'},
-{id:'xlFcf',val:'45.0%',cell:'C8',rev1:'$209.8B',rev2:'$268.5B',fcf1:'$94.4B',fcf2:'$120.8B',tv:'$3,670.5B',ev:'$4,202.2B',result:'$171.60',upside:'+33.0%'},
-{id:'xlWacc',val:'9.5%',cell:'C7',rev1:'$209.8B',rev2:'$268.5B',fcf1:'$94.4B',fcf2:'$120.8B',tv:'$4,120.8B',ev:'$4,652.5B',result:'$190.00',upside:'+47.2%'},
-{id:'xlTg',val:'4.0%',cell:'C6',rev1:'$209.8B',rev2:'$268.5B',fcf1:'$94.4B',fcf2:'$120.8B',tv:'$4,585.2B',ev:'$5,116.9B',result:'$208.90',upside:'+61.9%'}
+{id:'xlRg1',val:'62.0%',cell:'C4',rev1:'$209.8B',rev2:'$268.5B',fcf1:'$88.1B',fcf2:'$112.8B',tv:'$4,845.0B',ev:'$5,597.0B',result:'$228.50',upside:'+25.2%'},
+{id:'xlFcf',val:'45.0%',cell:'C8',rev1:'$209.8B',rev2:'$268.5B',fcf1:'$94.4B',fcf2:'$120.8B',tv:'$5,192.0B',ev:'$5,944.0B',result:'$242.70',upside:'+33.0%'},
+{id:'xlWacc',val:'9.5%',cell:'C7',rev1:'$209.8B',rev2:'$268.5B',fcf1:'$94.4B',fcf2:'$120.8B',tv:'$5,829.0B',ev:'$6,581.0B',result:'$268.70',upside:'+47.2%'},
+{id:'xlTg',val:'4.0%',cell:'C6',rev1:'$209.8B',rev2:'$268.5B',fcf1:'$94.4B',fcf2:'$120.8B',tv:'$6,486.5B',ev:'$7,237.0B',result:'$295.40',upside:'+61.9%'}
 ];
 var ei=0;
 function editNext(){
@@ -105,7 +105,7 @@ function runConvo(){if(!chatBox)return;var c=convos[ci%convos.length];ci++;
 typeText(chatInput,c.q,function(){chatInput.textContent='';addMsg('chat-user',avU,c.q);
 var dots=addDots();setTimeout(function(){if(chatBox.contains(dots))chatBox.removeChild(dots);addMsg('chat-ai',avA,c.a);
 if(ci===2)animDcfDownloadAndEdit();
-setTimeout(function(){if(ci<convos.length){runConvo()}else{setTimeout(function(){if(overlay)overlay.classList.remove('active');chatBox.innerHTML='';ci=0;chatInput.textContent='Ask about any S&P 500 ticker...';var resets=[['xlRg1','55.0%'],['xlRg2','28.0%'],['xlTg','3.5%'],['xlWacc','10.2%'],['xlFcf','42.0%'],['xlRev1','$202.3B'],['xlRev2','$258.9B'],['xlFcf1','$85.0B'],['xlFcf2','$108.7B'],['xlTv','$3,210.5B'],['xlEv','$3,742.2B'],['xlResult','$152.80'],['xlUpside','+18.4%']];resets.forEach(function(r){var el=document.getElementById(r[0]);if(el)el.textContent=r[1]});var fbC=document.getElementById('fbCell');var fbV=document.getElementById('fbVal');if(fbC)fbC.textContent='C4';if(fbV)fbV.textContent='55.0%';setTimeout(runConvo,2000)},6000)}},ci===2?12000:3000)},1500)})}
+setTimeout(function(){if(ci<convos.length){runConvo()}else{setTimeout(function(){if(overlay)overlay.classList.remove('active');chatBox.innerHTML='';ci=0;chatInput.textContent='Ask about any S&P 500 ticker...';var resets=[['xlRg1','55.0%'],['xlRg2','28.0%'],['xlTg','3.5%'],['xlWacc','10.2%'],['xlFcf','42.0%'],['xlRev1','$202.3B'],['xlRev2','$258.9B'],['xlFcf1','$85.0B'],['xlFcf2','$108.7B'],['xlTv','$4,541.5B'],['xlEv','$5,293.2B'],['xlResult','$216.00'],['xlUpside','+18.4%']];resets.forEach(function(r){var el=document.getElementById(r[0]);if(el)el.textContent=r[1]});var fbC=document.getElementById('fbCell');var fbV=document.getElementById('fbVal');if(fbC)fbC.textContent='C4';if(fbV)fbV.textContent='55.0%';setTimeout(runConvo,2000)},6000)}},ci===2?12000:3000)},1500)})}
 chatInput.textContent='Ask about any S&P 500 ticker...';
 setTimeout(runConvo,2000);
 }
