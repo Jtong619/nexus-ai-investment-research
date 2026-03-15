@@ -182,22 +182,28 @@ var touch=e.changedTouches?e.changedTouches[0]:e;
 var mx=touch.clientX;var my=touch.clientY;
 target.parentElement.classList.remove('highlight');
 if(mx>tRect.left-40&&mx<tRect.right+40&&my>tRect.top-40&&my<tRect.bottom+40){
-var emoji=item.dataset.emoji;
-var name=item.dataset.name;
-var color=item.dataset.color;
-target.textContent=emoji;
-target.setAttribute('fill',color);
+var dragEmoji=item.dataset.emoji;
+var dragColor=item.dataset.color;
+var oldEmoji=target.textContent;
+var oldColor=target.getAttribute('fill');
+target.textContent=dragEmoji;
+target.setAttribute('fill',dragColor);
 target.classList.add('kb-swapped');
 setTimeout(function(){target.classList.remove('kb-swapped')},600);
-var l1=document.getElementById(page+'KbLabel1');
-var l2=document.getElementById(page+'KbLabel2');
-if(l1){l1.textContent=name;l1.setAttribute('fill',color)}
-if(l2){l2.textContent='Source';l2.setAttribute('fill',color)}
+var iconText=item.querySelector('.kb-icon-text');
+if(iconText){
+iconText.textContent=oldEmoji;
+iconText.setAttribute('fill',oldColor);
+iconText.classList.add('kb-swapped');
+setTimeout(function(){iconText.classList.remove('kb-swapped')},600);
+}
+item.dataset.emoji=oldEmoji;
+item.dataset.color=oldColor;
 var ml=document.getElementById(page+'ModularLabel');
 if(ml){
-ml.setAttribute('font-size','9');
+ml.setAttribute('font-size','12');
 ml.setAttribute('opacity','1');
-ml.setAttribute('fill','#818cf8');
+ml.setAttribute('fill','#a5b4fc');
 }
 }
 }
