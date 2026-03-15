@@ -279,8 +279,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI','H
 .p6-table thead th{background:rgba(129,140,248,.12);color:#a5b4fc;font-size:13px;font-weight:700;padding:14px 16px;text-align:center;border-bottom:2px solid rgba(129,140,248,.2)}
 .p6-table thead th:first-child{text-align:left;border-radius:12px 0 0 0}
 .p6-table thead th:last-child{border-radius:0 12px 0 0}
-.p6-table tbody tr{opacity:0;transform:translateX(-20px);transition:opacity .6s ease,transform .6s ease}
-.p6-table tbody tr.visible{opacity:1;transform:translateX(0)}
+.p6-table tbody tr{opacity:1;transform:translateX(0);transition:opacity .6s ease,transform .6s ease}
+.p6-table tbody tr.p6-animate{opacity:0;transform:translateX(-20px)}
+.p6-table tbody tr.p6-animate.visible{opacity:1;transform:translateX(0)}
 .p6-table tbody td{padding:13px 16px;font-size:12px;color:#94a3b8;text-align:center;border-bottom:1px solid rgba(129,140,248,.08)}
 .p6-table tbody td:first-child{text-align:left;color:#c7d2fe;font-weight:600;font-size:12px}
 .p6-check{color:#22c55e;font-size:18px;font-weight:900}

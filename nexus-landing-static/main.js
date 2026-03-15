@@ -124,29 +124,7 @@ setTimeout(runConvo,2000);
 }
 
 
-function initKbDragDrop()
-
-function initPage6(){
-var cards=document.querySelectorAll('.p6-card');
-var rows=document.querySelectorAll('#p6Table tbody tr');
-var observer=new IntersectionObserver(function(entries){
-entries.forEach(function(entry){
-if(entry.isIntersecting){
-entry.target.classList.add('visible');
-observer.unobserve(entry.target);
-}
-});
-},{threshold:0.15});
-cards.forEach(function(card,i){
-card.style.transitionDelay=(i*0.15)+'s';
-observer.observe(card);
-});
-rows.forEach(function(row,i){
-row.style.transitionDelay=(i*0.12)+'s';
-observer.observe(row);
-});
-}
-initPage6();{
+function initKbDragDrop(){
 var items=document.querySelectorAll('.kb-drag-item');
 items.forEach(function(item){
 var svg=item.closest('svg');
@@ -264,12 +242,13 @@ entry.target.classList.add('visible');
 observer.unobserve(entry.target);
 }
 });
-},{threshold:0.15});
+},{threshold:0.1,rootMargin:'0px 0px 50px 0px'});
 cards.forEach(function(card,i){
 card.style.transitionDelay=(i*0.15)+'s';
 observer.observe(card);
 });
 rows.forEach(function(row,i){
+row.classList.add('p6-animate');
 row.style.transitionDelay=(i*0.12)+'s';
 observer.observe(row);
 });
