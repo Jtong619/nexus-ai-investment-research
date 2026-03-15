@@ -255,8 +255,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI','H
 .flow-glow{animation:pulseGlow 2s ease-in-out infinite}
 .arc-seg{opacity:0;transition:opacity 1s ease}
 .arc-seg.revealed{opacity:1}
-.kb-draggable{cursor:grab;transition:all .3s ease}
-.kb-draggable:hover{stroke-width:2.5;filter:drop-shadow(0 0 6px rgba(99,102,241,.4));transform:translateY(-2px)}
+.kb-drag-item{cursor:grab;transition:opacity .3s ease}
+.kb-drag-item:hover{opacity:.85}
+.kb-drag-item.dragging{opacity:.5}
+.highlight{filter:drop-shadow(0 0 12px rgba(99,102,241,.8));transition:filter .3s ease}
+@keyframes kbSwapPulse{0%{opacity:0;transform:scale(.5)}50%{opacity:1;transform:scale(1.3)}100%{opacity:1;transform:scale(1)}}
+.kb-swapped{animation:kbSwapPulse .5s ease forwards}
 
 
 @media(max-width:768px){.p-container{grid-template-columns:1fr;gap:40px}.col-visual{height:320px}}

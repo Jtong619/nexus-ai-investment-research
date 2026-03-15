@@ -425,25 +425,34 @@
 <text x="566" y="494" text-anchor="middle" fill="#c7d2fe" font-size="14" font-weight="700" font-family="system-ui">Data Collector</text>
 <text x="566" y="513" text-anchor="middle" fill="#64748b" font-size="8" font-family="system-ui">FMP API &bull; 507 tickers</text>
 <rect x="470" y="534" width="192" height="52" rx="12" fill="#0d0f1a" stroke="rgba(129,140,248,.35)" stroke-width="2"/>
-<text x="502" y="566" fill="#818cf8" font-size="28" font-family="system-ui">&#128218;</text>
-<text x="536" y="557" fill="#a5b4fc" font-size="12" font-weight="800" font-family="system-ui">Knowledge</text>
-<text x="536" y="575" fill="#818cf8" font-size="12" font-weight="800" font-family="system-ui">Base</text>
+<text x="502" y="566" fill="#818cf8" font-size="28" font-family="system-ui" id="p4KbIcon">&#128218;</text>
+<text x="536" y="557" fill="#a5b4fc" font-size="12" font-weight="800" font-family="system-ui" id="p4KbLabel1">Knowledge</text>
+<text x="536" y="575" fill="#818cf8" font-size="12" font-weight="800" font-family="system-ui" id="p4KbLabel2">Base</text>
 </g>
 <g class="flow-node" style="transition-delay:1s">
+<g class="kb-drag-item" data-page="p4" data-emoji="&#128193;" data-name="Folders" data-color="#22c55e" cursor="grab">
 <rect x="470" y="598" width="40" height="36" rx="6" fill="#0d0f1a" stroke="rgba(34,197,94,.3)" stroke-width="1.5" opacity=".8"/>
-<text x="490" y="623" text-anchor="middle" fill="#22c55e" font-size="18" font-family="system-ui">&#128193;</text>
-<text x="490" y="640" text-anchor="middle" fill="#64748b" font-size="6" font-family="system-ui">Folders</text>
+<text x="490" y="623" text-anchor="middle" fill="#22c55e" font-size="18" font-family="system-ui" pointer-events="none">&#128193;</text>
+<text x="490" y="640" text-anchor="middle" fill="#64748b" font-size="6" font-family="system-ui" pointer-events="none">Folders</text>
+</g>
+<g class="kb-drag-item" data-page="p4" data-emoji="&#128196;" data-name="PDFs" data-color="#fbbf24" cursor="grab">
 <rect x="520" y="598" width="40" height="36" rx="6" fill="#0d0f1a" stroke="rgba(251,191,36,.3)" stroke-width="1.5" opacity=".8"/>
-<text x="540" y="623" text-anchor="middle" fill="#fbbf24" font-size="18" font-family="system-ui">&#128196;</text>
-<text x="540" y="640" text-anchor="middle" fill="#64748b" font-size="6" font-family="system-ui">PDFs</text>
+<text x="540" y="623" text-anchor="middle" fill="#fbbf24" font-size="18" font-family="system-ui" pointer-events="none">&#128196;</text>
+<text x="540" y="640" text-anchor="middle" fill="#64748b" font-size="6" font-family="system-ui" pointer-events="none">PDFs</text>
+</g>
+<g class="kb-drag-item" data-page="p4" data-emoji="&#127891;" data-name="Models" data-color="#ef4444" cursor="grab">
 <rect x="570" y="598" width="40" height="36" rx="6" fill="#0d0f1a" stroke="rgba(239,68,68,.3)" stroke-width="1.5" opacity=".8"/>
-<text x="590" y="623" text-anchor="middle" fill="#ef4444" font-size="18" font-family="system-ui">&#127891;</text>
-<text x="590" y="640" text-anchor="middle" fill="#64748b" font-size="6" font-family="system-ui">Models</text>
+<text x="590" y="623" text-anchor="middle" fill="#ef4444" font-size="18" font-family="system-ui" pointer-events="none">&#127891;</text>
+<text x="590" y="640" text-anchor="middle" fill="#64748b" font-size="6" font-family="system-ui" pointer-events="none">Models</text>
+</g>
+<g class="kb-drag-item" data-page="p4" data-emoji="&#128451;" data-name="DBs" data-color="#0ea5e9" cursor="grab">
 <rect x="620" y="598" width="40" height="36" rx="6" fill="#0d0f1a" stroke="rgba(14,165,233,.3)" stroke-width="1.5" opacity=".8"/>
-<text x="640" y="623" text-anchor="middle" fill="#0ea5e9" font-size="18" font-family="system-ui">&#128451;</text>
-<text x="640" y="640" text-anchor="middle" fill="#64748b" font-size="6" font-family="system-ui">DBs</text>
+<text x="640" y="623" text-anchor="middle" fill="#0ea5e9" font-size="18" font-family="system-ui" pointer-events="none">&#128451;</text>
+<text x="640" y="640" text-anchor="middle" fill="#64748b" font-size="6" font-family="system-ui" pointer-events="none">DBs</text>
+</g>
 <line x1="566" y1="588" x2="566" y2="598" stroke="rgba(129,140,248,.2)" stroke-width="1" stroke-dasharray="3,2"/>
-<text x="566" y="660" text-anchor="middle" fill="#818cf8" font-size="7" font-weight="600" font-family="system-ui" opacity=".5">&#8593; drag to replace &#8593;</text>
+<text x="566" y="660" text-anchor="middle" fill="#818cf8" font-size="8" font-weight="600" font-family="system-ui" opacity=".6">&#8593; drag to replace &#8593;</text>
+<text x="566" y="678" text-anchor="middle" fill="#475569" font-size="0" font-weight="700" font-family="system-ui" id="p4ModularLabel" opacity="0">Replaceable modular knowledge base</text>
 </g>
 
 <!-- ═══ NODE: Supervisor (bottom-left) ═══ -->
@@ -678,28 +687,37 @@
 <text x="666" y="357" text-anchor="middle" fill="#c7d2fe" font-size="14" font-weight="700" font-family="system-ui">Data Collector</text>
 <text x="666" y="374" text-anchor="middle" fill="#64748b" font-size="8" font-family="system-ui">FMP API &bull; 507 tickers</text>
 <rect x="570" y="394" width="192" height="52" rx="12" fill="#0d0f1a" stroke="rgba(129,140,248,.35)" stroke-width="2"/>
-<text x="602" y="426" fill="#818cf8" font-size="28" font-family="system-ui">&#128218;</text>
-<text x="636" y="417" fill="#a5b4fc" font-size="12" font-weight="800" font-family="system-ui">Knowledge</text>
-<text x="636" y="435" fill="#818cf8" font-size="12" font-weight="800" font-family="system-ui">Base</text>
+<text x="602" y="426" fill="#818cf8" font-size="28" font-family="system-ui" id="p5KbIcon">&#128218;</text>
+<text x="636" y="417" fill="#a5b4fc" font-size="12" font-weight="800" font-family="system-ui" id="p5KbLabel1">Knowledge</text>
+<text x="636" y="435" fill="#818cf8" font-size="12" font-weight="800" font-family="system-ui" id="p5KbLabel2">Base</text>
 </g>
 
 
 <g class="flow-node" style="transition-delay:1s">
-<text x="400" y="560" text-anchor="middle" fill="#475569" font-size="9" font-weight="600" font-family="system-ui" letter-spacing="1">DRAG TO REPLACE KNOWLEDGE BASE</text>
-<rect x="570" y="458" width="40" height="36" rx="6" fill="#0d0f1a" stroke="rgba(34,197,94,.3)" stroke-width="1.5" opacity=".8" class="kb-draggable"/>
-<text x="590" y="483" text-anchor="middle" fill="#22c55e" font-size="18" font-family="system-ui">&#128193;</text>
-<text x="590" y="500" text-anchor="middle" fill="#64748b" font-size="6" font-family="system-ui">Folders</text>
-<rect x="620" y="458" width="40" height="36" rx="6" fill="#0d0f1a" stroke="rgba(251,191,36,.3)" stroke-width="1.5" opacity=".8" class="kb-draggable"/>
-<text x="640" y="483" text-anchor="middle" fill="#fbbf24" font-size="18" font-family="system-ui">&#128196;</text>
-<text x="640" y="500" text-anchor="middle" fill="#64748b" font-size="6" font-family="system-ui">PDFs</text>
-<rect x="670" y="458" width="40" height="36" rx="6" fill="#0d0f1a" stroke="rgba(239,68,68,.3)" stroke-width="1.5" opacity=".8" class="kb-draggable"/>
-<text x="690" y="483" text-anchor="middle" fill="#ef4444" font-size="18" font-family="system-ui">&#127891;</text>
-<text x="690" y="500" text-anchor="middle" fill="#64748b" font-size="6" font-family="system-ui">Models</text>
-<rect x="720" y="458" width="40" height="36" rx="6" fill="#0d0f1a" stroke="rgba(14,165,233,.3)" stroke-width="1.5" opacity=".8" class="kb-draggable"/>
-<text x="740" y="483" text-anchor="middle" fill="#0ea5e9" font-size="18" font-family="system-ui">&#128451;</text>
-<text x="740" y="500" text-anchor="middle" fill="#64748b" font-size="6" font-family="system-ui">DBs</text>
+<text x="665" y="560" text-anchor="middle" fill="#475569" font-size="9" font-weight="600" font-family="system-ui" letter-spacing="1">DRAG TO REPLACE KNOWLEDGE BASE</text>
+<g class="kb-drag-item" data-page="p5" data-emoji="&#128193;" data-name="Folders" data-color="#22c55e" cursor="grab">
+<rect x="570" y="458" width="40" height="36" rx="6" fill="#0d0f1a" stroke="rgba(34,197,94,.3)" stroke-width="1.5" opacity=".8"/>
+<text x="590" y="483" text-anchor="middle" fill="#22c55e" font-size="18" font-family="system-ui" pointer-events="none">&#128193;</text>
+<text x="590" y="500" text-anchor="middle" fill="#64748b" font-size="6" font-family="system-ui" pointer-events="none">Folders</text>
+</g>
+<g class="kb-drag-item" data-page="p5" data-emoji="&#128196;" data-name="PDFs" data-color="#fbbf24" cursor="grab">
+<rect x="620" y="458" width="40" height="36" rx="6" fill="#0d0f1a" stroke="rgba(251,191,36,.3)" stroke-width="1.5" opacity=".8"/>
+<text x="640" y="483" text-anchor="middle" fill="#fbbf24" font-size="18" font-family="system-ui" pointer-events="none">&#128196;</text>
+<text x="640" y="500" text-anchor="middle" fill="#64748b" font-size="6" font-family="system-ui" pointer-events="none">PDFs</text>
+</g>
+<g class="kb-drag-item" data-page="p5" data-emoji="&#127891;" data-name="Models" data-color="#ef4444" cursor="grab">
+<rect x="670" y="458" width="40" height="36" rx="6" fill="#0d0f1a" stroke="rgba(239,68,68,.3)" stroke-width="1.5" opacity=".8"/>
+<text x="690" y="483" text-anchor="middle" fill="#ef4444" font-size="18" font-family="system-ui" pointer-events="none">&#127891;</text>
+<text x="690" y="500" text-anchor="middle" fill="#64748b" font-size="6" font-family="system-ui" pointer-events="none">Models</text>
+</g>
+<g class="kb-drag-item" data-page="p5" data-emoji="&#128451;" data-name="DBs" data-color="#0ea5e9" cursor="grab">
+<rect x="720" y="458" width="40" height="36" rx="6" fill="#0d0f1a" stroke="rgba(14,165,233,.3)" stroke-width="1.5" opacity=".8"/>
+<text x="740" y="483" text-anchor="middle" fill="#0ea5e9" font-size="18" font-family="system-ui" pointer-events="none">&#128451;</text>
+<text x="740" y="500" text-anchor="middle" fill="#64748b" font-size="6" font-family="system-ui" pointer-events="none">DBs</text>
+</g>
 <line x1="666" y1="448" x2="666" y2="458" stroke="rgba(129,140,248,.2)" stroke-width="1" stroke-dasharray="3,2"/>
-<text x="666" y="520" text-anchor="middle" fill="#818cf8" font-size="7" font-weight="600" font-family="system-ui" opacity=".5">&#8593; drag to replace &#8593;</text>
+<text x="666" y="520" text-anchor="middle" fill="#818cf8" font-size="8" font-weight="600" font-family="system-ui" opacity=".6">&#8593; drag to replace &#8593;</text>
+<text x="666" y="580" text-anchor="middle" fill="#475569" font-size="0" font-weight="700" font-family="system-ui" id="p5ModularLabel" opacity="0">Replaceable modular knowledge base</text>
 </g>
 <!-- Step counter -->
 <g class="flow-node" style="transition-delay:1.2s">

@@ -122,4 +122,101 @@ setTimeout(function(){if(ci<convos.length){runConvo()}else{setTimeout(function()
 chatInput.textContent='Ask about any S&P 500 ticker...';
 setTimeout(runConvo,2000);
 }
+
+
+function initKbDragDrop(){
+var items=document.querySelectorAll('.kb-drag-item');
+items.forEach(function(item){
+var svg=item.closest('svg');
+if(!svg)return;
+var dragging=false;var startPt=null;var origTransform='';
+var ghost=null;
+
+function getSvgPoint(e){
+var pt=svg.createSVGPoint();
+var touch=e.touches?e.touches[0]:e;
+pt.x=touch.clientX;pt.y=touch.clientY;
+return pt.matrixTransform(svg.getScreenCTM().inverse());
+}
+
+function onStart(e){
+e.preventDefault();e.stopPropagation();
+dragging=true;item.classList.add('dragging');
+startPt=getSvgPoint(e);
+origTransform=item.getAttribute('transform')||'';
+ghost=item.cloneNode(true);
+ghost.style.opacity='.7';
+ghost.style.pointerEvents='none';
+svg.appendChild(ghost);
+}
+
+function onMove(e){
+if(!dragging)return;
+e.preventDefault();
+var pt=getSvgPoint(e);
+var dx=pt.x-startPt.x;var dy=pt.y-startPt.y;
+ghost.setAttribute('transform','translate('+dx+','+dy+')');
+var page=item.dataset.page;
+var target=document.getElementById(page+'KbIcon');
+if(target){
+var tRect=target.getBoundingClientRect();
+var touch=e.touches?e.touches[0]:e;
+var mx=touch.clientX;var my=touch.clientY;
+if(mx>tRect.left-30&&mx<tRect.right+30&&my>tRect.top-30&&my<tRect.bottom+30){
+target.parentElement.classList.add('highlight');
+}else{
+target.parentElement.classList.remove('highlight');
+}
+}
+}
+
+function onEnd(e){
+if(!dragging)return;
+dragging=false;item.classList.remove('dragging');
+if(ghost&&ghost.parentNode)ghost.parentNode.removeChild(ghost);
+var page=item.dataset.page;
+var target=document.getElementById(page+'KbIcon');
+if(!target)return;
+var tRect=target.getBoundingClientRect();
+var touch=e.changedTouches?e.changedTouches[0]:e;
+var mx=touch.clientX;var my=touch.clientY;
+target.parentElement.classList.remove('highlight');
+if(mx>tRect.left-40&&mx<tRect.right+40&&my>tRect.top-40&&my<tRect.bottom+40){
+var emoji=item.dataset.emoji;
+var name=item.dataset.name;
+var color=item.dataset.color;
+target.textContent=emoji;
+target.setAttribute('fill',color);
+target.classList.add('kb-swapped');
+setTimeout(function(){target.classList.remove('kb-swapped')},600);
+var l1=document.getElementById(page+'KbLabel1');
+var l2=document.getElementById(page+'KbLabel2');
+if(l1){l1.textContent=name;l1.setAttribute('fill',color)}
+if(l2){l2.textContent='Source';l2.setAttribute('fill',color)}
+var ml=document.getElementById(page+'ModularLabel');
+if(ml){
+ml.setAttribute('font-size','9');
+ml.setAttribute('opacity','1');
+ml.setAttribute('fill','#818cf8');
+}
+}
+}
+
+item.addEventListener('mousedown',onStart);
+item.addEventListener('touchstart',onStart,{passive:false});
+document.addEventListener('mousemove',onMove);
+document.addEventListener('touchmove',onMove,{passive:false});
+document.addEventListener('mouseup',onEnd);
+document.addEventListener('touchend',onEnd);
+document.addEventListener('touchcancel',function(){
+if(!dragging)return;
+dragging=false;item.classList.remove('dragging');
+if(ghost&&ghost.parentNode)ghost.parentNode.removeChild(ghost);
+var page=item.dataset.page;
+var target=document.getElementById(page+'KbIcon');
+if(target)target.parentElement.classList.remove('highlight');
+});
+});
+}
+initKbDragDrop()
 })();
